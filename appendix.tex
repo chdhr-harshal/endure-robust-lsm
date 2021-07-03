@@ -1,0 +1,234 @@
+%!TEX root = main.tex
+
+\appendix
+
+\section{Robust tuning problems}
+\subsection{Uncertain memory availability:}
+We also explore the situation wherein the underlying system resources such as
+    total memory available to an LSM-tree at runtime substantially differs from
+    the memory allocated at the time of initialization.
+Such scenarios are common in applications like cloud-deployment where the 
+    resources available to the LSM-tree may vary.
+We assume that the total memory available to the LSM-tree ({\mtot}) can vary
+    at runtime, while the rest of the untunable parameters ($\varphi$) stay
+    fixed.
+Assuming an uncertainty region for the total memory $\mathcal{U}_\memory$ we can define the
+analogue of the {\robustw} problem under memory uncertainty as follows:
+
+
+\begin{problem}[{\robustm}]\label{problem:robustm}
+Given $\workload$ and $\varphi$ and uncertainty region $\mathcal{U}_\memory$ 
+find the tuning configuration of the LSM tree $\configuration_\memory$ such that
+\begin{eqnarray}
+\label{eq:robust_memory_problem}
+\configuration_{\memory} &=& \argmin_{\configuration} \cost(\workload,
+    \configuration; \obsmtot, \varphi) \nonumber\\
+    \textrm{s.t.,}&& \obsmtot \in \mathcal{U}_{m}.
+\end{eqnarray}
+\end{problem}
+
+The rationale behind the above problem definition is the same as the one we described for Problem~\ref{problem:robustw}.
+Given that all memory configurations in $\mathcal{U}_\memory$ are feasible the solution to the {\robustm} problem tries to find
+the LSM tree configuration that optimizes the worst-case scenario among all those. We discuss how we solve this problem efficiently in the next section.
+
+Note that when we define the {\robustw} problem we assume that $\mtot$ is fixed and when we define the {\robustm} problem
+we analogously assume that $\workload$ is fixed.  Clearly, one can combine the two types of uncertainty into one problem definition.  The techniques we describe in the next section could potentially be used for solving such a problem.  However, 
+we consider solving this problem as beyond the scope of this paper. 
+
+\subsection{Solving the {\robustm} problem}
+
+\spara{Defining the uncertainty region $\mathcal{U}_\mtot$:} Recall that the
+total memory available to the system $\mtot$ is a scalar. Therefore, we can define the uncertainty region
+by assuming that the observed total memory lies in a finite interval surrounding the expected total memory {\mtot}.
+Given $\rho\in [0,1]$, we define the uncertainty region as: 
+\begin{equation}
+\label{eq:robust_counterpart_memory_problem}
+ \mathcal{U}_{\memory}^\rho = \{\obsmtot\textrm{  }|\textrm{  } \obsmtot \geq 0, 
+    (1-\rho)\memory \leq \obsmtot \leq (1-\rho)\memory \}.
+\end{equation}
+For conciseness, for the rest of the discussion we also use 
+$\mlo = (1 - \rho)\memory$ and $\mhi = (1 + \rho)\memory$.
+A procedure for setting the value of $\rho$ in this case is given in Section~\ref{sec:rhom}.
+
+\spara{Rewriting the {\robustm} problem (Primal):}
+Using the above definition, we can now formulate the robust counterpart of problem
+    described in Equation~\eqref{eq:robust_memory_problem} as folows:
+\begin{equation}
+    \min_{\configuration} \max_{\obsmtot \in \mathcal{U}_{\memory}^\rho}
+    \cost(\workload, \configuration; \obsmtot, \varphi)
+\end{equation}
+Note that the workload {\workload} is fixed. In this case,
+we also have additional constraints on the {\configuration}; for example,
+there is an implicit contraint that the memory allocated
+ to the bloom filters in any configuration is less than the total memory
+ available.
+In case of uncertainty in the memory availability, we need to explictly
+    account for this using an additional constraint, 
+\begin{equation}
+    \mfilt - \obsmtot \leq 0.
+\end{equation}
+Note that throughout the rest of this section we will assume that this constraint should always be satisfied and we will not 
+repeat it.
+
+\todo{Right now this is a deterministic contraint. Consider making it uncertain.}
+
+
+We again remove the uncertainty from the objective and reintroduce it in form of
+    a constraint in the following bi-level optimization problem:
+\begin{eqnarray}
+    \min &&{\beta} \nonumber\\
+    \textrm{s.t.,}&&\max_{\configuration, \obsmtot}
+    \big\{\cost(\workload, \configuration; \obsmtot, \varphi) -
+        \beta\textrm{  }|\textrm{  } \mlo \leq \obsmtot \leq \mhi  \big\} \leq 0.
+\end{eqnarray}
+\spara{Formulating the dual problem:}
+Since the cost function is smooth, and the uncertainty set is non-empty and
+    bounded for each configuration {\configuration}, the lower-level optimization problem has a
+    solution, and the objective has a finite value.
+The uncertain constraint on available memory can be reformulated as an
+    optimization problem using duality, as proposed in a series of papers by Ben-Tal 
+    {\etal}~\citep{ben2002robust, ben2015deriving, Ben-Tal1998-ic}.
+Specifically, we use the Wolfe dual to arrive at the problem
+\begin{eqnarray}
+    \min &&\beta \nonumber\\
+    \textrm{s.t.,}&&\min_{\obsmtot, \lambda_0, \lambda_1}
+    \big\{
+        \mathcal{L}(\configuration; \obsmtot, \lambda_0, \lambda_1)
+    \textrm{  }|\textrm{  }  \nonumber\\
+    &&\nabla_\obsmtot\mathcal{L}(\configuration;
+    \obsmtot, \lambda_0, \lambda_1) = 0, \lambda_0, \lambda_1 \geq 0 \big\} \leq 0 
+\end{eqnarray}
+where,
+\begin{equation*}
+    \mathcal{L}(\configuration; \obsmtot, \lambda_0, \lambda_1) :=
+    \cost(\workload, \configuration; \obsmtot, \varphi) - \beta
+    - \lambda_0(\mlo - \obsmtot)
+    - \lambda_1(\obsmtot - \mhi).
+\end{equation*}
+If we find any values of $(\lambda_0, \lambda_1)$ such that 
+    $\mathcal{L}(\configuration; \obsmtot, \lambda_0, \lambda_1) \leq 0$,
+    then it follows that the minimum is non-positive and we can omit the inner
+    minimization problem.
+This gives us a single level non-linear optimization problem we need to solve.
+\begin{eqnarray}
+    \label{eq:final_dual_rewrite_memory}
+    \min &&\beta \nonumber\\
+    \textrm{s.t.,}&&\mathcal{L}(\configuration; \obsmtot,
+    \lambda_0, \lambda_1) \leq 0 \nonumber \\
+    &&\nabla_{\obsmtot}\mathcal{L}(\configuration;
+    \obsmtot, \lambda_0, \lambda_1) = 0\nonumber\\
+    &&\lambda_0, \lambda_1 \geq 0.
+\end{eqnarray}
+
+By combining the results of~\cite{} we have the following:
+
+\begin{lemma}
+A configuration $\configuration$ is the optimal solution to the
+{\robustm} problem if and only if it is also the optimal solution of the dual problem as described in Equation~\eqref{eq:final_dual_rewrite_memory}.
+\end{lemma}
+That is, solving the dual problem as described in Equation~\eqref{eq:final_dual_rewrite_memory} will lead to the optimal solution
+of the {\robustm} problem.
+
+\spara{Solving the dual optimization problem:}
+Using the results of 
+Ben-Tal {\etal}~\cite{Ben-Tal1998-ic} we can state the following:
+
+\begin{lemma} For our setting, the dual problem as described in Equation~\eqref{eq:final_dual_rewrite_memory} can be solved
+ optimally in polynomial time 
+ \end{lemma}
+This is becaues the cost functions we have for the case of LSM tree optimization are ``tractable robust constraints''
+as defined by Ben-Tal~\cite{Ben-Tal1998-ic}.
+
+%In our case, any globally optimal solution to
+%Problem~\eqref{eq:final_dual_rewrite_memory} is optimal solution for the
+%original Problem~\eqref{eq:robust_counterpart_memory_problem}, while a locally
+%optimal solution gives an upper bound on the robust solution to the original
+%problem.
+
+For the sake of uniformity, we solve
+Problem~\eqref{eq:final_dual_rewrite_memory} using the same solver as workload 
+uncertainty i.e. Sequential Least Squares Quadratic Programming solver (SLSQP),
+which is a local solver, to obtain a configuration {\configuration} that is
+robust to uncertainty in total available memory.  Therefore, in practice we only obtain an upper bound of the optimal
+solution for {\robustm}. However, we note here that 
+because our cost function is smooth and ``well-behaved'', a
+locally optimal configuration obtained using SLSQP is often times that globally optimal
+solution.
+
+
+\subsection{Estimation of $\rho$ for workload uncertainty}\label{sec:rhow}
+Consider a scenario based on $N$ observed queries, denoted by $q_1, \cdots,
+q_N$.
+As described in earlier sections, each query can be of type non-empty lookup,
+    empty lookup, range lookup or an update.
+Let the frequency vector $\frequency = (f_z, f_{z_{0}}, f_q, f_w)^\intercal$ denote the 
+    maximum likelihood estimator of the frequencies of each query type in the observed samples. 
+If we denote by $\frequency_\theta$ a frequency vector obtained from a
+distribution parameterized by $\theta$, then 
+    Pardo~\cite{pardo2018statistical} shows that under appropriate regularity 
+    conditions, the normalized estimated KL-divergence
+\begin{equation}
+    \frac{2N}{\phi_{KL}^{''}(1)}I_{KL}(\frequency_\theta, \frequency)
+\end{equation}
+for $N \rightarrow \infty$ follows a $\chi_{d}^{2}$-distribution where $d$
+denotes the degrees of freedom i.e. 3 in our case.
+It allows us to define an approximate $(1 - \alpha)$-confidence set around
+{\frequency} as:
+\begin{equation}
+    \{ \theta \in \Theta | I_{KL}(\frequency_\theta, \frequency) \leq \rho \},
+\end{equation}
+where\footnote{In this expression, $\chi_{d, 1 - \alpha}^{2}$ is the $(1 -
+\alpha)$ percentile of $\chi_{d}^2$ distribution, i.e., $\mathbb{P}( X \geq
+\chi_{d, 1 - \alpha}^{2}) = \alpha$ where $X$ is a random variable following
+$\chi_{d}^{2}$ distribution.} 
+\begin{equation}
+    \rho := \frac{\phi_{KL}^{''}(1)}{2N}\chi_{d, 1 - \alpha}^{2}.
+\end{equation}
+Using the \emph{information processing theorem}, Liese {\etal}~\cite{Liese2006-iv} 
+    prove that transforming the frequency vectors
+    into their corresponding probability vectors i.e. workloads, the relation
+\begin{equation}
+    I_{KL}(\workload_\theta, \workload) \leq I_{KL}(\frequency_\theta,
+    \frequency)
+\end{equation}
+is satisfied.
+Thus,
+\begin{equation}
+    \{\theta \in \Theta | I_{KL}(\workload_\theta, \workload) \leq \rho\} \supset
+    \{\theta \in \Theta | I_{KL}(\frequency_\theta, \frequency) \leq \rho\}
+\end{equation}
+where the confidence level of the left hand side set is at least equal to
+$(1-\alpha)$.
+This further implies that that the uncertainty set 
+\begin{eqnarray}
+    \mathcal{U}_{\workload}^\rho &=& \{\obsworkload\textrm{
+        }|\textrm{  } \obsworkload
+\geq 0, \obsworkload^\intercal\columnvec = 1, I_{KL}(\obsworkload,
+\workload) \leq \rho\} \nonumber\\
+&\supset& \{\workload_\theta | I_{KL}(\workload_\theta,
+\workload) \leq \rho\}
+\end{eqnarray}
+is an approximate confidence set of at least $(1 - \alpha)$ confidence level.
+Thus, given an expected workload $\workload$ computed from $N$ queries, 
+    we are able to determine if any other workload $\hat{\workload}$ lies within 
+    its $(1 - \alpha)$-confidence level uncertainty set.
+Conversely, one may use this result to estimate the appropriate value of the 
+    workload uncertainty parameter $\rho$ based on historical workloads.
+
+\subsection{Estimation of $\rho$ for memory uncertainty}\label{sec:rhom}
+In contrast to the workload uncertainty, we adopt a relatively straightforward
+    way to estimate the uncertainty parameter $\rho$ for the case of memory
+    uncertainty.
+Consider a scenario based on $N$ observed instances of total memory, denoted by
+    $m_1, \cdots, m_N$.
+We know that, if the true ground truth distribution of total memory $m$ has a
+    mean $\mu$ and unknown standard deviation $\sigma$, a $(1 - \alpha)$-confidence 
+    interval for $\mu$ based on $N$ samples is $\bar{m} \pm t^*\frac{s}{N}$ 
+    where $\bar{m}$ is the sample mean, $s$ is the sample standard error and
+    $t^*$ is the upper $\frac{1 - \alpha}{2}$ critical value for the
+    \emph{t}-distribution with $N-1$ degrees of freedom.
+Hence, we simply estimate the value of memory uncertainty parameter as
+\begin{equation}
+    \rho := \frac{s}{N \bar{m}} t^*.
+\end{equation}
+

@@ -1,0 +1,73 @@
+%!TEX root = main.tex
+
+% =============================================================================
+\section{Related Work}
+\label{sec:related_work}
+
+\Paragraph{Tuning Data Systems}
+Database systems are notorious for having numerous tuning knobs. These tuning knobs
+control fine-grained decisions (e.g., number of threads, amount of memory for bufferpool,
+storage size for logging) as well as basic architectural and physical design decisions 
+about partitioning, index design, materialized views that affect storage
+and access patterns, and query execution \cite{Bruno2005,Chaudhuri1998a}. 
+The database research community has
+developed several tools to deal with such tuning problems. These 
+tools can be broadly classified as offline workload analysis for index and views design \cite{Agrawal2004,Agrawal2000,Chaudhuri1997,Dageville2004,Valentin2000,Zilio2004},
+and periodic online workload 
+analysis \cite{Bruno2006,Schnaitter2006,Schnaitter2007,Schnaitter2012} to capture
+workload drift \cite{Holze2010}. In addition, there has been research on reducing
+the magnitude of the search space of tuning \cite{Bruno2005,Dash2011} and on deciding the optional data partitioning 
+\cite{Athanassoulis2019,Papadomanolakis2004,Serafini2016,Sun2014,Sun2016}.
+%
+These approaches assume that the input information
+about resources and workload is accurate. When it is proved to be inaccurate, performance is typically severely impacted.
+
+%Contrary to these approaches, our work proposes 
+%a new paradigm for tuning that can absorb 
+%uncertainty in the input of the tuning.
+
+
+\Paragraph{Adaptive \& Self-designing Data Systems}
+A first attempt to address this problem
+was the design of \textit{adaptive} systems which had to pay additional transition costs
+(e.g., when deploying a new tuning) to accommodate shifting workloads \cite{Idreos2007,Graefe2010a,Graefe2010c,Schuhknecht2018}. 
+More recently the research community has focused on using machine learning to 
+learn the interplay of tuning knobs, and especially of the knobs that are hard 
+to analytically model to perform cost-based optimization. This recent work on
+self-driving database systems \cite{Aken2017,Ma2018,Pavlo2017} or
+self-designing database systems \cite{Idreos2019,Idreos2019a,Idreos2018a,Idreos2018} 
+is exploiting new advancements in machine learning to tune database systems and reduce
+the need for human intervention, however, they also yield suboptimal results
+when the workload and resource availability information is inaccurate. 
+
+\Paragraph{Robust Database Physical Design}
+One of the key database tuning decisions is 
+physical design, that is, the decision of 
+which set of auxiliary structures should be 
+used to allow for the fastest execution of 
+future queries. Most of the existing systems 
+use past workload information as a 
+representative sample for future workloads, 
+which often leads to sub-optimal decisions when 
+there is significant workload drift. 
+Cliffguard \cite{Mozafari2015} is the first attempt to use
+unconstrained robust optimization to find a robust physical design. Cliffguard targets
+vertical partitioning decisions and is limited to unconstrained cases without setting 
+service-level agreements. 
+Perhaps the biggest difference between our approaches lies
+    in the definition of the uncertainty region around a workload. 
+Cliffguard algorithm assumes
+    that the workloads are present in a Euclidean distance space, while our approach uses
+    a more intuitive distance measure for variations in proportions of different
+    queries in a workload viz., KL-divergence. 
+In contrast to Cliffguard, our formulation of the robust problem does not 
+    require additional hyperparameters, such as the gradient descent step-size.
+    
+%
+% \todo{further differentiate from Cliffguard}
+
+
+
+
+% =============================================================================
+

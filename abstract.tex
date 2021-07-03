@@ -1,0 +1,60 @@
+%!TEX root = main.tex
+
+\begin{abstract}
+Log-structured merge-trees (LSM trees) are increasingly used as the 
+    storage engines behind several data systems, many of 
+    which are deployed in the cloud. 
+% Similar to other database architectures, LSM trees rely on tuning
+%     to optimize their performance taking into account the \emph{expected} workload (e.g., reads vs. 
+%     writes and point vs. range queries). 
+Similar to other database architectures, LSM trees take into account
+    information about the \emph{expected} workloads (e.g., reads vs. writes and
+    point vs. range queries) and optimize their performances by changing tunings.
+%and the \emph{available resources} (e.g., amount of main memory, storage performance).
+Operating in the cloud, however, comes with a degree of 
+    \emph{uncertainty} due to multi-tenancy and the fast-evolving nature
+    of modern applications.
+Databases with static tunings discount the variability of such hybrid workloads
+    and hence provide an inconsistent and overall suboptimal performance.
+% Hybrid workloads can be dynamic having significant variability from the expectation, leading
+%     to suboptimal tuning with subpar performance.
+
+%
+%a specific tuning suboptimal. At the
+%same time, the available resources may fluctuate especially due to multi-tenancy. In both cases,
+%we observe an \emph{uncertainty} with respect to the assumption when tuning the underlying storage
+%engine, which often leads to suboptimal performance.  
+
+To address this problem, we introduce {\Endure} -- a new paradigm
+    for tuning LSM Trees in the presence of workload uncertainty.
+% and we apply it to LSM trees. 
+Specifically, we focus on the impact of the choice of compaction policies, size-ratio,
+    and memory allocation on the overall query performance.
+% Specifically, we focus on the impact of the compaction policy, the size ratio, and 
+% the memory allocation on the ingestion and query performance of LSM trees. 
+{\Endure} considers a robust formulation of the throughput maximization problem,
+    and recommends a tuning
+    that maximizes the worst-case throughput over the \emph{neighborhood}
+    of an expected workload.
+% We frame the LSM tuning
+% process, as a robust optimization problem that finds a 
+% tuning that is the best for the worst-case workload among those that are in the
+% \emph{neighborhood} of the expected workload. 
+Additionally, an uncertainty tuning parameter controls the size of this 
+    neighborhood, thereby allowing the output tunings to be conservative or
+    optimistic.
+% The size of this neighborhood is given as an input 
+% to the robust tuning process, allowing the robust tuning to 
+% be conservative or optimistic accordingly. 
+We benchmark {\Endure} on a state-of-the-art LSM-based storage engine, RocksDB,
+    and show that its tunings comprehensively outperform tunings from classical
+    strategies.
+Drawing upon the results of our extensive analytical and empirical evaluation, 
+    we recommend the use of {\Endure} for optimizing the performance of 
+    LSM tree-based storage engines.
+% and we show both analytically and empirically that 
+% robust tuning outperforms
+% classical tuning even when there are small discrepancies 
+% between the expected and the observed workloads. 
+
+\end{abstract}

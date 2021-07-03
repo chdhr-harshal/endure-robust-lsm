@@ -1,0 +1,58 @@
+\documentclass[sigconf,anonymous]{acmart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+% \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{moresize}
+\usepackage{graphicx}
+\usepackage{balance}
+\usepackage{subcaption}
+\usepackage[show]{chato-notes}
+
+%\settopmatter{printacmref=false}
+
+% Algorithm2e package
+\usepackage[noend, linesnumbered, ruled]{algorithm2e}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{end if}%
+\SetKwFor{While}{while}{}{end while}%
+\SetKwFor{For}{for}{}{end for}
+\SetKwRepeat{Do}{do}{while}
+
+% Include macros
+\input{macros}
+
+\begin{document}
+\title{Endure: A Robust Tuning Paradigm for LSM Trees Under Workload Uncertainty}
+
+\input{abstract}
+
+\maketitle
+
+\input{introduction}
+\input{background}
+\input{problem-definition}
+\input{robust-tuning}
+\input{cost-model}
+\input{uncertainty-benchmark}
+\input{model_evaluation}
+\input{system-evaluation}
+\balance 
+\input{related_work}
+\input{conclusion}
+
+\clearpage
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibliography,library}
+\balance
+
+% Appendices
+% \clearpage
+% \input{appendix}
+\end{document}

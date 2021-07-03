@@ -1,0 +1,195 @@
+\section{Problem Definitions}
+In this section, we provide the formal problem definitions on how to choose the \emph{design parameters} of 
+an LSM tree. Before proceeding, we give a brief introduction to our notation.
+
+\subsection{Notation}\label{sec:notation}
+As we discussed above, LSM trees have two types of parameters: the \emph{design parameters} and the \emph{system parameters}.  One can think of the design parameters as those that someone who aims to optimize the performance of
+an LSM tree can tune, while the system parameters are given and therefore untunable.
+
+\Paragraph{Design Parameters}
+The design parameters we consider in this paper (in accordance with the related
+    work~\cite{Dayan2017,Dayan2018a,Luo2020b}) are the  size-ratio ({\sizeratio}),
+    the memory allocated to the Bloom filters ({\mfilt}), the memory allocated to
+    the write buffer ({\mbuf}) and the policy ({\policy}) as shown in Table
+    \ref{tab:model-design-params}.
+Recall that the policy refers to either leveling or tiering, as discussed in the previous section.
+
+
+\begin{table}[h]\centering%\small
+    %\vspace{-0.1in}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{cl}
+    \toprule
+    Term & Definition \\
+    \midrule
+        $\mfilt$ &  Memory allocated for Bloom filters  \\ 
+        $\mbuf$ &  Memory allocated for the write buffer \\ 
+        $\sizeratio$ &  Size ratio between consecutive levels   \\ 
+        \policy & Compaction policy (\emph{tiering}/\emph{leveling}) \\ 
+    \bottomrule
+\end{tabular}
+\caption{\emph{Design} parameters of an LSM tree.}
+	\label{tab:model-design-params}	
+	%\vspace{-0.35in}
+\end{table}
+ 
+\Paragraph{System Parameters} A complicated data structure like LSM trees also has other various \emph{system parameters} and other non-tunable as shown in Table \ref{tab:model-system-params} (e.g., total memory ({\mtot}), size of data entries $E$, page size $B$, data size $N$). 
+
+\begin{table}[h]\centering%\small
+    %\vspace{-0.1in}
+\renewcommand{\arraystretch}{1.1}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{cl}
+    \toprule
+    Term & Definition \\
+    \midrule
+    $\mtot$ & Total memory (Bloom filters+write buffer)    ($\mtot=\mbuf+\mfilt$)\\
+        $E$ &  Size of a key-value entry  \\ 
+        $B$ &  Number of entries that fit in a page   \\ 
+        $N$ & Total number of entries    \\ 	
+    \bottomrule
+\end{tabular}
+}
+\caption{\emph{System} and untunable parameters of an LSM tree.}
+	\label{tab:model-system-params}	
+%	\vspace{-0.05in}
+\end{table}
+    
+\Paragraph{LSM Tree Configuration} In terms of notation we use $\configuration$ to denote the 
+LSM tree tuning configuration which essentially describes the values of the
+tunable parameters together  $\configuration := (\sizeratio, \mfilt, \policy)$. Note that we only
+use the memory for Bloom filters $\mfilt$ and not 
+$\mbuf$, because the latter can be derived using the 
+former and the 
+total available memory: $\mbuf=\mtot-\mfilt$.
+
+\Paragraph{Workload}  The choice of the parameters in $\configuration$ 
+depends on the input (expected) workload, i.e., the fraction of
+empty lookups
+    ({\emptylookup}), non-empty lookups ({\nonemptylookup}), range lookups
+    ({\range}), and write ({\update}) queries, as shown in Table \ref{tab:workload-params}.
+A workload can therefore be expressed as a vector 
+    ${\workload = (\emptylookup, \nonemptylookup, \range, \update)^\intercal \geq 0}$
+    describing the proportions of the different kinds of queries.
+Clearly, $\emptylookup+\nonemptylookup+\range+\update = 1$ or alternatively:
+$\workload^\intercal \columnvec = 1$ where {\columnvec} denotes a column vector of
+    ones. %of the same dimension as {\workload}.
+
+\begin{table}[h]\centering%\small
+    %\vspace{-0.1in}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{cl}
+    \toprule
+    Term & Definition \\
+    \midrule
+        $z_0$ & Percentage of zero-result point lookups\\ %in the workload \\ 
+        $z_1$ & Percentage of non-zero-result point lookups\\ %in the workload  \\ 
+        $q$ & Percentage of range queries\\ %in the workload  \\ 
+        $w$ & Percentage of updates\\ %in the workload  \\ 
+    \bottomrule
+\end{tabular}
+\caption{Parameters describing the \emph{workload}.}
+    \label{tab:workload-params}	
+    %\vspace{-0.35in}
+\end{table}
+
+\noindent Each type of query (non-empty lookups, empty lookups, range lookups and writes) has a different cost, denoted as
+$Z_0(\configuration)$, $Z_1(\configuration)$, $Q(\configuration)$, $W(\configuration)$, as there is a dependency between
+the cost of each type of query and the design ${\configuration}$.
+For easiness of notation, we use 
+    $\costvec(\configuration) = \left(Z_0(\configuration), Z_1(\configuration), Q(\configuration), W(\configuration)\right)^\intercal$ 
+    to denote the vector of the costs  of executing
+    different types of queries.
+Thus, given a specific configuration ({\configuration}) and a workload ({\workload}),
+    the expected cost for the workload can be computed as:
+{%
+%\small
+\begin{equation}
+    \label{eq:thecost}
+    \cost(\workload, \configuration) = \workload^\intercal
+    \costvec(\configuration)=\nonemptylookup \cdot
+    Z_0(\configuration)+\emptylookup \cdot Z_1(\configuration) + \range\cdot Q(\configuration) + \update \cdot W(\configuration).
+\end{equation}
+}%
+
+\subsection{The Nominal Tuning Problem}
+Traditionally, the designers have focused on finding the 
+configuration ${\configuration}^\ast$ that minimizes the total cost %$\cost(\workload, \configuration^\ast;\varphi)$, 
+$\cost(\workload, \configuration^\ast)$,
+ for a given fixed workload $\workload$.  We call this problem the
+ {\nominal} problem, defined as follows:
+ 
+ \begin{problem}[{\nominal}]\label{problem:nominal}
+ Given fixed $\workload$  find the tuning configuration of the LSM tree $\configuration_N$ such that
+\begin{equation}
+\label{eq:nominal_problem}
+    \configuration_N = \argmin_{\configuration} \cost(\workload, \configuration).
+\end{equation}
+\end{problem}
+
+\noindent The nominal tuning problem described above 
+captures the classical tuning paradigm. It uses a
+cost-model to find a system configuration that 
+minimizes the cost given a specific workload and 
+system environment. Specifically, prior tuning
+approaches for LSM trees solve the nominal tuning
+problem when proposing optimal memory allocation,
+and merging policies \cite{Dayan2017,Dayan2018a,Luo2020a}.
+
+
+
+\subsection{The Robust Tuning Problem}
+\label{subsec:robust-tuning}
+
+In this work, we attempt to compute high-performance configurations that minimize
+    expected cost of operation, as expressed in Equation~\eqref{eq:thecost}, 
+    in the presence of uncertainty with respect to the expected workload.
+
+%\Paragraph{Uncertain Workload:}
+In the {\nominal} problem, the designers assume perfect information about the 
+    workload for which to tune the system. For example, they may assume that the
+    input vector $\workload$ represents the workload for which they have to
+    optimize. While in practice, $\workload$ is simply an estimate of what the
+    workload will look like.
+Hence, the configuration obtained by solving Problem~\ref{problem:nominal} may
+    result in high variability in the system performance; which will inevitably
+    depend on the actual observed workload upon the deployment of the system. 
+    
+We capture this uncertainty by reformulating Problem~\ref{problem:nominal} to
+    take into account the variability that can be observed in the input workload. 
+Given expected workload $\workload$, we introduce the notion of the
+    \emph{uncertainty region} of $\workload$, which we denote by
+    $\mathcal{U}_\workload$.
+
+We can define the robust version of Problem~\ref{problem:nominal}, under the 
+assumption that there is uncertainty in the input workload as follows:
+
+\begin{problem}[{\robustw}]\label{problem:robustw} 
+Given $\workload$ and uncertainty region $\mathcal{U}_\workload$ 
+find the tuning configuration of the LSM tree $\configuration_R$ such that
+\begin{eqnarray}
+\label{eq:robust_workload_problem}
+\configuration_R &=& \argmin_{\configuration} \cost(\obsworkload,
+    \configuration) \nonumber\\
+    \textrm{s.t.,}&& \obsworkload \in \mathcal{U}_{\workload}.
+\end{eqnarray}
+\end{problem}
+
+Note that the above problem definition intuitively states the following: it recognizes that the input workload $\workload$ won't
+be observed exactly, and it assumes that any workload in $\mathcal{U}_\workload$ is possible.  Then, it searches for the
+configuration $\configuration_\workload$ that is best for the \emph{worst-case} scenario among all those in $\mathcal{U}_\workload$. 
+
+The challenge in solving {\robustw}  is that one needs to explore all the workloads in the uncertainty region
+in order to solve the problem.  In the next section, we show that this is not necessary.  In fact, by appropriately rewriting 
+the problem definition we show that we can solve Problem~\ref{problem:robustw} in polynomial time.
+
+
+%
+%$\mathcal{U}_{\workload}$ represents the \emph{uncertainty region} around
+%    the expected workload {\workload}; a set of  workloads similar to but
+%    not exactly the same as {\workload}. 
+%In Section~\ref{sec:robust_lsm_tuning}, we explain in detail the
+%    parameterization of the uncertainty region 
+%    based on the number of sample workloads used during the computation of the 
+%    expected workload and the confidence of the designer on how relevant the 
+%    observed samples are to the future workloads.

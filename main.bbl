@@ -1,0 +1,1370 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{87}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Absalyamov, Carey, and Tsotras}{Absalyamov
+  et~al\mbox{.}}{2018}]%
+        {Absalyamov2018}
+\bibfield{author}{\bibinfo{person}{Ildar Absalyamov},
+  \bibinfo{person}{Michael~J Carey}, {and} \bibinfo{person}{Vassilis~J
+  Tsotras}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Lightweight Cardinality Estimation in LSM-based
+  Systems}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}. \bibinfo{pages}{841--855}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3183713.3183761}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Agrawal, Chaudhuri, Koll{\'{a}}r, Marathe,
+  Narasayya, and Syamala}{Agrawal et~al\mbox{.}}{2004}]%
+        {Agrawal2004}
+\bibfield{author}{\bibinfo{person}{Sanjay Agrawal}, \bibinfo{person}{Surajit
+  Chaudhuri}, \bibinfo{person}{Lubor Koll{\'{a}}r},
+  \bibinfo{person}{Arunprasad~P. Marathe}, \bibinfo{person}{Vivek~R.
+  Narasayya}, {and} \bibinfo{person}{Manoj Syamala}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{Database Tuning Advisor for Microsoft SQL Server
+  2005}}. In \bibinfo{booktitle}{\emph{Proceedings of the International
+  Conference on Very Large Data Bases (VLDB)}}. \bibinfo{pages}{1110--1121}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Agrawal, Chaudhuri, and Narasayya}{Agrawal
+  et~al\mbox{.}}{2000}]%
+        {Agrawal2000}
+\bibfield{author}{\bibinfo{person}{Sanjay Agrawal}, \bibinfo{person}{Surajit
+  Chaudhuri}, {and} \bibinfo{person}{Vivek~R. Narasayya}.}
+  \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{{Automated Selection of Materialized Views and
+  Indexes in SQL Databases}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Very Large Data Bases (VLDB)}}.
+  \bibinfo{pages}{496--505}.
+\newblock
+\showISBNx{1-55860-715-3}
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=645926.671701}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Aken, Pavlo, Gordon, and Zhang}{Aken
+  et~al\mbox{.}}{2017}]%
+        {Aken2017}
+\bibfield{author}{\bibinfo{person}{Dana~Van Aken}, \bibinfo{person}{Andrew
+  Pavlo}, \bibinfo{person}{Geoffrey~J Gordon}, {and} \bibinfo{person}{Bohan
+  Zhang}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Automatic Database Management System Tuning
+  Through Large-scale Machine Learning}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{1009--1024}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3035918.3064029}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Alkowaileet, Alsubaiee, and Carey}{Alkowaileet
+  et~al\mbox{.}}{2020}]%
+        {Alkowaileet2020}
+\bibfield{author}{\bibinfo{person}{Wail~Y Alkowaileet}, \bibinfo{person}{Sattam
+  Alsubaiee}, {and} \bibinfo{person}{Michael~J Carey}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{An LSM-based Tuple Compaction Framework for Apache
+  AsterixDB}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{13}, \bibinfo{number}{9} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{1388--1400}.
+\newblock
+\urldef\tempurl%
+\url{http://www.vldb.org/pvldb/vol13/p1388-alkowaileet.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{Anonymous Authors}}{{Anonymous
+  Authors}}{2021}]%
+        {github-repo}
+\bibfield{author}{\bibinfo{person}{{Anonymous Authors}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Robust LSM Tuning}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://anonymous.4open.science/r/robust-lsm-tuning-E212}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Apache}{Apache}{2021}]%
+        {ApacheCassandra}
+\bibfield{author}{\bibinfo{person}{Apache}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{Cassandra}}.
+\newblock \bibinfo{journal}{\emph{http://cassandra.apache.org}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Athanassoulis, B{\o}gh, and
+  Idreos}{Athanassoulis et~al\mbox{.}}{2019}]%
+        {Athanassoulis2019}
+\bibfield{author}{\bibinfo{person}{Manos Athanassoulis},
+  \bibinfo{person}{Kenneth~S. B{\o}gh}, {and} \bibinfo{person}{Stratos
+  Idreos}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{Optimal Column Layout for Hybrid Workloads}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{12}, \bibinfo{number}{13} (\bibinfo{year}{2019}),
+  \bibinfo{pages}{2393--2407}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ben-Tal, den Hertog, De~Waegenaere, Melenberg,
+  and Rennen}{Ben-Tal et~al\mbox{.}}{2013a}]%
+        {Ben-Tal2013-kw}
+\bibfield{author}{\bibinfo{person}{Aharon Ben-Tal}, \bibinfo{person}{Dick den
+  Hertog}, \bibinfo{person}{Anja De~Waegenaere}, \bibinfo{person}{Bertrand
+  Melenberg}, {and} \bibinfo{person}{Gijs Rennen}.}
+  \bibinfo{year}{2013}\natexlab{a}.
+\newblock \showarticletitle{{Robust Solutions of Optimization Problems Affected
+  by Uncertain Probabilities}}.
+\newblock \bibinfo{journal}{\emph{Manage. Sci.}} \bibinfo{volume}{59},
+  \bibinfo{number}{2} (\bibinfo{date}{Feb.} \bibinfo{year}{2013}),
+  \bibinfo{pages}{341--357}.
+\newblock
+\showISSN{0025-1909}
+\urldef\tempurl%
+\url{https://doi.org/10.1287/mnsc.1120.1641}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ben-Tal, den Hertog, Waegenaere, Melenberg,
+  and Rennen}{Ben-Tal et~al\mbox{.}}{2013b}]%
+        {Ben-Tal2013}
+\bibfield{author}{\bibinfo{person}{Aharon Ben-Tal}, \bibinfo{person}{Dick den
+  Hertog}, \bibinfo{person}{Anja~De Waegenaere}, \bibinfo{person}{Bertrand
+  Melenberg}, {and} \bibinfo{person}{Gijs Rennen}.}
+  \bibinfo{year}{2013}\natexlab{b}.
+\newblock \showarticletitle{{Robust Solutions of Optimization Problems Affected
+  by Uncertain Probabilities}}.
+\newblock \bibinfo{journal}{\emph{Management Science}} \bibinfo{volume}{59},
+  \bibinfo{number}{2} (\bibinfo{year}{2013}), \bibinfo{pages}{341--357}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1287/mnsc.1120.1641}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ben-Tal and Nemirovski}{Ben-Tal and
+  Nemirovski}{1998}]%
+        {Ben-Tal1998}
+\bibfield{author}{\bibinfo{person}{Aharon Ben-Tal} {and}
+  \bibinfo{person}{Arkadi Nemirovski}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{{Robust Convex Optimization}}.
+\newblock \bibinfo{journal}{\emph{Mathematics of Operations Research}}
+  \bibinfo{volume}{23}, \bibinfo{number}{4} (\bibinfo{year}{1998}),
+  \bibinfo{pages}{769--805}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1287/moor.23.4.769}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bertsimas, Nohadani, and Teo}{Bertsimas
+  et~al\mbox{.}}{2010}]%
+        {Bertsimas2010}
+\bibfield{author}{\bibinfo{person}{Dimitris Bertsimas}, \bibinfo{person}{Omid
+  Nohadani}, {and} \bibinfo{person}{Kwong~Meng Teo}.}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{Robust Optimization for Unconstrained
+  Simulation-Based Problems}}.
+\newblock \bibinfo{journal}{\emph{Operations Research}} \bibinfo{volume}{58},
+  \bibinfo{number}{1} (\bibinfo{year}{2010}), \bibinfo{pages}{161--178}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1287/opre.1090.0715}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bloom}{Bloom}{1970}]%
+        {Bloom1970}
+\bibfield{author}{\bibinfo{person}{Burton~H Bloom}.}
+  \bibinfo{year}{1970}\natexlab{}.
+\newblock \showarticletitle{{Space/Time Trade-offs in Hash Coding with
+  Allowable Errors}}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{13},
+  \bibinfo{number}{7} (\bibinfo{year}{1970}), \bibinfo{pages}{422--426}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=362686.362692}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bortnikov, Braginsky, Hillel, Keidar, and
+  Sheffi}{Bortnikov et~al\mbox{.}}{2018}]%
+        {Bortnikov2018}
+\bibfield{author}{\bibinfo{person}{Edward Bortnikov},
+  \bibinfo{person}{Anastasia Braginsky}, \bibinfo{person}{Eshcar Hillel},
+  \bibinfo{person}{Idit Keidar}, {and} \bibinfo{person}{Gali Sheffi}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Accordion: Better Memory Organization for LSM
+  Key-Value Stores}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{11}, \bibinfo{number}{12} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{1863--1875}.
+\newblock
+\urldef\tempurl%
+\url{http://www.vldb.org/pvldb/vol11/p1863-bortnikov.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bruno and Chaudhuri}{Bruno and
+  Chaudhuri}{2005}]%
+        {Bruno2005}
+\bibfield{author}{\bibinfo{person}{Nicolas Bruno} {and}
+  \bibinfo{person}{Surajit Chaudhuri}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{{Automatic physical database tuning}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{227--238}.
+\newblock
+\showISBNx{1595930604}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1066157.1066184}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bruno and Chaudhuri}{Bruno and
+  Chaudhuri}{2006}]%
+        {Bruno2006}
+\bibfield{author}{\bibinfo{person}{Nicolas Bruno} {and}
+  \bibinfo{person}{Surajit Chaudhuri}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{{To Tune or not to Tune? A Lightweight Physical
+  Design Alerter}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Very Large Data Bases (VLDB)}}.
+  \bibinfo{pages}{499--510}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1182635.1164171}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chang, Dean, Ghemawat, Hsieh, Wallach,
+  Burrows, Chandra, Fikes, and Gruber}{Chang et~al\mbox{.}}{2006}]%
+        {Chang2006}
+\bibfield{author}{\bibinfo{person}{Fay Chang}, \bibinfo{person}{Jeffrey Dean},
+  \bibinfo{person}{Sanjay Ghemawat}, \bibinfo{person}{Wilson~C. Hsieh},
+  \bibinfo{person}{Deborah~A. Wallach}, \bibinfo{person}{Mike Burrows},
+  \bibinfo{person}{Tushar Chandra}, \bibinfo{person}{Andrew Fikes}, {and}
+  \bibinfo{person}{Robert~E. Gruber}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{{Bigtable: A Distributed Storage System for
+  Structured Data}}. In \bibinfo{booktitle}{\emph{Proceedings of the USENIX
+  Symposium on Operating Systems Design and Implementation (OSDI)}}.
+  \bibinfo{pages}{205--218}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1267308.1267323}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chaudhuri, Dageville, and Lohman}{Chaudhuri
+  et~al\mbox{.}}{2004}]%
+        {Chaudhuri2004a}
+\bibfield{author}{\bibinfo{person}{Surajit Chaudhuri},
+  \bibinfo{person}{Beno$\backslash${\^{}}$\backslash$it Dageville}, {and}
+  \bibinfo{person}{Guy~M Lohman}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{Self-Managing Technology in Database Management
+  Systems}}. In \bibinfo{booktitle}{\emph{Proceedings of the International
+  Conference on Very Large Data Bases (VLDB)}}. \bibinfo{pages}{1243}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/B978-012088469-8.50116-9}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chaudhuri and Narasayya}{Chaudhuri and
+  Narasayya}{1997}]%
+        {Chaudhuri1997}
+\bibfield{author}{\bibinfo{person}{Surajit Chaudhuri} {and}
+  \bibinfo{person}{Vivek~R. Narasayya}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{{An Efficient Cost-Driven Index Selection Tool for
+  Microsoft SQL Server}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Very Large Data Bases (VLDB)}}.
+  \bibinfo{pages}{146--155}.
+\newblock
+\showISBNx{1-55860-470-7}
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=645923.673646}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chaudhuri and Narasayya}{Chaudhuri and
+  Narasayya}{1998}]%
+        {Chaudhuri1998a}
+\bibfield{author}{\bibinfo{person}{Surajit Chaudhuri} {and}
+  \bibinfo{person}{Vivek~R Narasayya}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{{AutoAdmin 'What-if' Index Analysis Utility}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{367--378}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/276304.276337}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chaudhuri and Weikum}{Chaudhuri and
+  Weikum}{2005}]%
+        {Chaudhuri2005}
+\bibfield{author}{\bibinfo{person}{Surajit Chaudhuri} {and}
+  \bibinfo{person}{Gerhard Weikum}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{{Foundations of automated database tuning}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{964--965}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1066157.1066305}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chohan, Castillo, Spreitzer, Steinder,
+  Tantawi, and Krintz}{Chohan et~al\mbox{.}}{2010}]%
+        {Chohan2010}
+\bibfield{author}{\bibinfo{person}{Navraj Chohan}, \bibinfo{person}{Claris
+  Castillo}, \bibinfo{person}{Mike Spreitzer}, \bibinfo{person}{Malgorzata
+  Steinder}, \bibinfo{person}{Asser~N Tantawi}, {and} \bibinfo{person}{Chandra
+  Krintz}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{See Spot Run: Using Spot Instances for MapReduce
+  Workflows}}. In \bibinfo{booktitle}{\emph{Proceedings of USENIX Workshop on
+  Hot Topics in Cloud Computing (HotCloud)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dageville, Das, Dias, Yagoub, Zait, and
+  Ziauddin}{Dageville et~al\mbox{.}}{2004}]%
+        {Dageville2004}
+\bibfield{author}{\bibinfo{person}{Benoit Dageville}, \bibinfo{person}{Dinesh
+  Das}, \bibinfo{person}{Karl Dias}, \bibinfo{person}{Khaled Yagoub},
+  \bibinfo{person}{Mohamed Zait}, {and} \bibinfo{person}{Mohamed Ziauddin}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{Automatic SQL tuning in oracle 10g}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the International Conference on Very
+  Large Data Bases (VLDB)}}. \bibinfo{pages}{1098--1109}.
+\newblock
+\showISBNx{0-12-088469-0}
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1316689.1316784}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dash, Polyzotis, and Ailamaki}{Dash
+  et~al\mbox{.}}{2011}]%
+        {Dash2011}
+\bibfield{author}{\bibinfo{person}{Debabrata Dash}, \bibinfo{person}{Neoklis
+  Polyzotis}, {and} \bibinfo{person}{Anastasia Ailamaki}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{{CoPhy: A Scalable, Portable, and Interactive Index
+  Advisor for Large Workloads}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{4}, \bibinfo{number}{6} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{362--372}.
+\newblock
+\showISSN{21508097}
+\urldef\tempurl%
+\url{https://doi.org/10.14778/1978665.1978668}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dayan, Athanassoulis, and Idreos}{Dayan
+  et~al\mbox{.}}{2017}]%
+        {Dayan2017}
+\bibfield{author}{\bibinfo{person}{Niv Dayan}, \bibinfo{person}{Manos
+  Athanassoulis}, {and} \bibinfo{person}{Stratos Idreos}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Monkey: Optimal Navigable Key-Value Store}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{79--94}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3035918.3064054}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dayan, Athanassoulis, and Idreos}{Dayan
+  et~al\mbox{.}}{2018}]%
+        {Dayan2018a}
+\bibfield{author}{\bibinfo{person}{Niv Dayan}, \bibinfo{person}{Manos
+  Athanassoulis}, {and} \bibinfo{person}{Stratos Idreos}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Optimal Bloom Filters and Adaptive Merging for
+  LSM-Trees}}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Database Systems (TODS)}}
+  \bibinfo{volume}{43}, \bibinfo{number}{4} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{16:1--16:48}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3276980}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dayan and Idreos}{Dayan and Idreos}{2018}]%
+        {Dayan2018}
+\bibfield{author}{\bibinfo{person}{Niv Dayan} {and} \bibinfo{person}{Stratos
+  Idreos}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Dostoevsky: Better Space-Time Trade-Offs for
+  LSM-Tree Based Key-Value Stores via Adaptive Removal of Superfluous
+  Merging}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}. \bibinfo{pages}{505--520}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3183713.3196927}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dayan and Idreos}{Dayan and Idreos}{2019}]%
+        {Dayan2019}
+\bibfield{author}{\bibinfo{person}{Niv Dayan} {and} \bibinfo{person}{Stratos
+  Idreos}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{The Log-Structured Merge-Bush {\&} the Wacky
+  Continuum}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data (SIGMOD)}}.
+  \bibinfo{pages}{449--466}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3299869.3319903}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{DeCandia, Hastorun, Jampani, Kakulapati,
+  Lakshman, Pilchin, Sivasubramanian, Vosshall, and Vogels}{DeCandia
+  et~al\mbox{.}}{2007}]%
+        {DeCandia2007}
+\bibfield{author}{\bibinfo{person}{Giuseppe DeCandia}, \bibinfo{person}{Deniz
+  Hastorun}, \bibinfo{person}{Madan Jampani}, \bibinfo{person}{Gunavardhan
+  Kakulapati}, \bibinfo{person}{Avinash Lakshman}, \bibinfo{person}{Alex
+  Pilchin}, \bibinfo{person}{Swaminathan Sivasubramanian},
+  \bibinfo{person}{Peter Vosshall}, {and} \bibinfo{person}{Werner Vogels}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{{Dynamo: Amazon's Highly Available Key-value
+  Store}}.
+\newblock \bibinfo{journal}{\emph{ACM SIGOPS Operating Systems Review}}
+  \bibinfo{volume}{41}, \bibinfo{number}{6} (\bibinfo{year}{2007}),
+  \bibinfo{pages}{205--220}.
+\newblock
+\showISBNx{978-1-59593-591-5}
+\showISSN{01635980}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1323293.1294281}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dong, Callaghan, Galanis, Borthakur, Savor,
+  and Strum}{Dong et~al\mbox{.}}{2017}]%
+        {Dong2017}
+\bibfield{author}{\bibinfo{person}{Siying Dong}, \bibinfo{person}{Mark
+  Callaghan}, \bibinfo{person}{Leonidas Galanis}, \bibinfo{person}{Dhruba
+  Borthakur}, \bibinfo{person}{Tony Savor}, {and} \bibinfo{person}{Michael
+  Strum}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Optimizing Space Amplification in RocksDB}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Biennial Conference on
+  Innovative Data Systems Research (CIDR)}}.
+\newblock
+\urldef\tempurl%
+\url{http://cidrdb.org/cidr2017/papers/p82-dong-cidr17.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Facebook}{Facebook}{[n. d.]}]%
+        {FacebookMyRocks}
+\bibfield{author}{\bibinfo{person}{Facebook}.} \bibinfo{year}{[n.
+  d.]}\natexlab{}.
+\newblock \showarticletitle{{MyRocks}}.
+\newblock \bibinfo{journal}{\emph{http://myrocks.io/}} (\bibinfo{year}{[n.
+  d.]}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Facebook}{Facebook}{2021}]%
+        {FacebookRocksDB}
+\bibfield{author}{\bibinfo{person}{Facebook}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{RocksDB}}.
+\newblock \bibinfo{journal}{\emph{https://github.com/facebook/rocksdb}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Galante and Bona}{Galante and Bona}{2012}]%
+        {Galante2012}
+\bibfield{author}{\bibinfo{person}{Guilherme Galante} {and}
+  \bibinfo{person}{Luis Carlos Erpen~De Bona}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{A Survey on Cloud Computing Elasticity}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the IEEE International Conference on
+  Utility and Cloud Computing (UCC)}}. \bibinfo{pages}{263--270}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/UCC.2012.30}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Google}{Google}{2021}]%
+        {GoogleLevelDB}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{LevelDB}}.
+\newblock \bibinfo{journal}{\emph{https://github.com/google/leveldb/}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Graefe and Kuno}{Graefe and Kuno}{2010a}]%
+        {Graefe2010a}
+\bibfield{author}{\bibinfo{person}{Goetz Graefe} {and} \bibinfo{person}{Harumi
+  Kuno}.} \bibinfo{year}{2010}\natexlab{a}.
+\newblock \showarticletitle{{Self-selecting, self-tuning, incrementally
+  optimized indexes}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Extending Database Technology (EDBT)}}.
+  \bibinfo{pages}{371--381}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1739041.1739087}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Graefe and Kuno}{Graefe and Kuno}{2010b}]%
+        {Graefe2010c}
+\bibfield{author}{\bibinfo{person}{Goetz Graefe} {and}
+  \bibinfo{person}{Harumi~A. Kuno}.} \bibinfo{year}{2010}\natexlab{b}.
+\newblock \showarticletitle{{Adaptive indexing for relational keys}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the IEEE International Conference on
+  Data Engineering Workshops (ICDEW)}}. \bibinfo{pages}{69--74}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hayes}{Hayes}{2008}]%
+        {Hayes2008}
+\bibfield{author}{\bibinfo{person}{Brian Hayes}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{{Cloud computing}}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{51},
+  \bibinfo{number}{7} (\bibinfo{year}{2008}), \bibinfo{pages}{9--11}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1364782.1364786}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{HBase}{HBase}{2013}]%
+        {HBase2013}
+\bibfield{author}{\bibinfo{person}{HBase}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{{Online reference}}.
+\newblock \bibinfo{journal}{\emph{http://hbase.apache.org/}}
+  (\bibinfo{year}{2013}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Herbst, Kounev, and Reussner}{Herbst
+  et~al\mbox{.}}{2013}]%
+        {Herbst2013}
+\bibfield{author}{\bibinfo{person}{Nikolas~Roman Herbst},
+  \bibinfo{person}{Samuel Kounev}, {and} \bibinfo{person}{Ralf~H Reussner}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{{Elasticity in Cloud Computing: What It Is, and
+  What It Is Not}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Autonomic Computing (ICAC)}}.
+  \bibinfo{pages}{23--27}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Holze, Haschimi, and Ritter}{Holze
+  et~al\mbox{.}}{2010}]%
+        {Holze2010}
+\bibfield{author}{\bibinfo{person}{Marc Holze}, \bibinfo{person}{Ali Haschimi},
+  {and} \bibinfo{person}{Norbert Ritter}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{Towards workload-aware self-management: Predicting
+  significant workload shifts}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the IEEE International
+  Conference on Data Engineering (ICDE)}} (\bibinfo{year}{2010}),
+  \bibinfo{pages}{111--116}.
+\newblock
+\showISBNx{9781424465217}
+\showISSN{10844627}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICDEW.2010.5452738}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Huang, Cheng, Wang, Wang, He, Zhang, Li, Wang,
+  Cao, and Li}{Huang et~al\mbox{.}}{2019}]%
+        {Huang2019}
+\bibfield{author}{\bibinfo{person}{Gui Huang}, \bibinfo{person}{Xuntao Cheng},
+  \bibinfo{person}{Jianying Wang}, \bibinfo{person}{Yujie Wang},
+  \bibinfo{person}{Dengcheng He}, \bibinfo{person}{Tieying Zhang},
+  \bibinfo{person}{Feifei Li}, \bibinfo{person}{Sheng Wang},
+  \bibinfo{person}{Wei Cao}, {and} \bibinfo{person}{Qiang Li}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{X-Engine: An Optimized Storage Engine for
+  Large-scale E-commerce Transaction Processing}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{651--665}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3299869.3314041}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Idreos, Dayan, Qin, Akmanalp, Hilgard, Ross,
+  Lennon, Jain, Gupta, Li, and Zhu}{Idreos et~al\mbox{.}}{2019}]%
+        {Idreos2019}
+\bibfield{author}{\bibinfo{person}{Stratos Idreos}, \bibinfo{person}{Niv
+  Dayan}, \bibinfo{person}{Wilson Qin}, \bibinfo{person}{Mali Akmanalp},
+  \bibinfo{person}{Sophie Hilgard}, \bibinfo{person}{Andrew Ross},
+  \bibinfo{person}{James Lennon}, \bibinfo{person}{Varun Jain},
+  \bibinfo{person}{Harshita Gupta}, \bibinfo{person}{David Li}, {and}
+  \bibinfo{person}{Zichen Zhu}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{Design Continuums and the Path Toward
+  Self-Designing Key-Value Stores that Know and Learn}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Biennial Conference on
+  Innovative Data Systems Research (CIDR)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Idreos, Kersten, and Manegold}{Idreos
+  et~al\mbox{.}}{2007}]%
+        {Idreos2007}
+\bibfield{author}{\bibinfo{person}{Stratos Idreos}, \bibinfo{person}{Martin~L.
+  Kersten}, {and} \bibinfo{person}{Stefan Manegold}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{{Database Cracking}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Biennial Conference on
+  Innovative Data Systems Research (CIDR)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Idreos and Kraska}{Idreos and Kraska}{2019}]%
+        {Idreos2019a}
+\bibfield{author}{\bibinfo{person}{Stratos Idreos} {and} \bibinfo{person}{Tim
+  Kraska}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{From Auto-tuning One Size Fits All to
+  Self-designed and Learned Data-intensive Systems}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data (SIGMOD)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Idreos, Zoumpatianos, Athanassoulis, Dayan,
+  Hentschel, Kester, Guo, Maas, Qin, Wasay, and Sun}{Idreos
+  et~al\mbox{.}}{2018a}]%
+        {Idreos2018a}
+\bibfield{author}{\bibinfo{person}{Stratos Idreos}, \bibinfo{person}{Kostas
+  Zoumpatianos}, \bibinfo{person}{Manos Athanassoulis}, \bibinfo{person}{Niv
+  Dayan}, \bibinfo{person}{Brian Hentschel}, \bibinfo{person}{Michael~S.
+  Kester}, \bibinfo{person}{Demi Guo}, \bibinfo{person}{Lukas~M. Maas},
+  \bibinfo{person}{Wilson Qin}, \bibinfo{person}{Abdul Wasay}, {and}
+  \bibinfo{person}{Yiyou Sun}.} \bibinfo{year}{2018}\natexlab{a}.
+\newblock \showarticletitle{{The Periodic Table of Data Structures}}.
+\newblock \bibinfo{journal}{\emph{IEEE Data Engineering Bulletin}}
+  \bibinfo{volume}{41}, \bibinfo{number}{3} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{64--75}.
+\newblock
+\urldef\tempurl%
+\url{http://sites.computer.org/debull/A18sept/p64.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Idreos, Zoumpatianos, Hentschel, Kester, and
+  Guo}{Idreos et~al\mbox{.}}{2018b}]%
+        {Idreos2018}
+\bibfield{author}{\bibinfo{person}{Stratos Idreos}, \bibinfo{person}{Kostas
+  Zoumpatianos}, \bibinfo{person}{Brian Hentschel}, \bibinfo{person}{Michael~S
+  Kester}, {and} \bibinfo{person}{Demi Guo}.} \bibinfo{year}{2018}\natexlab{b}.
+\newblock \showarticletitle{{The Data Calculator: Data Structure Design and
+  Cost Synthesis from First Principles and Learned Cost Models}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{535--550}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3183713.3199671}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Intel}{Intel}{2011}]%
+        {Intel2011}
+\bibfield{author}{\bibinfo{person}{Intel}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{{Best Practices for Building an Enterprise Private
+  Cloud}}.
+\newblock \bibinfo{journal}{\emph{White Paper}} (\bibinfo{year}{2011}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kim, Behm, Blow, Borkar, Bu, Carey, Hubail,
+  Jahangiri, Jia, Li, Luo, Maxon, and Pirzadeh}{Kim et~al\mbox{.}}{2020}]%
+        {Kim2020}
+\bibfield{author}{\bibinfo{person}{Taewoo Kim}, \bibinfo{person}{Alexander
+  Behm}, \bibinfo{person}{Michael Blow}, \bibinfo{person}{Vinayak Borkar},
+  \bibinfo{person}{Yingyi Bu}, \bibinfo{person}{Michael~J. Carey},
+  \bibinfo{person}{Murtadha Hubail}, \bibinfo{person}{Shiva Jahangiri},
+  \bibinfo{person}{Jianfeng Jia}, \bibinfo{person}{Chen Li},
+  \bibinfo{person}{Chen Luo}, \bibinfo{person}{Ian Maxon}, {and}
+  \bibinfo{person}{Pouria Pirzadeh}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Robust and efficient memory management in Apache
+  AsterixDB}}.
+\newblock \bibinfo{journal}{\emph{Software - Practice and Experience}}
+  \bibinfo{volume}{50}, \bibinfo{number}{7} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{1114--1151}.
+\newblock
+\showISSN{1097024X}
+\urldef\tempurl%
+\url{https://doi.org/10.1002/spe.2799}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kullback and Leibler}{Kullback and
+  Leibler}{1951}]%
+        {Kullback1951}
+\bibfield{author}{\bibinfo{person}{S. Kullback} {and} \bibinfo{person}{R.~A.
+  Leibler}.} \bibinfo{year}{1951}\natexlab{}.
+\newblock \showarticletitle{{On Information and Sufficiency}}.
+\newblock \bibinfo{journal}{\emph{The Annals of Mathematical Statistics}}
+  \bibinfo{volume}{22}, \bibinfo{number}{1} (\bibinfo{year}{1951}),
+  \bibinfo{pages}{79 -- 86}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1214/aoms/1177729694}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Luo}{Luo}{2020}]%
+        {Luo2020a}
+\bibfield{author}{\bibinfo{person}{Chen Luo}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Breaking Down Memory Walls in LSM-based Storage
+  Systems}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}.
+  \bibinfo{pages}{2817--2819}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3318464.3384399}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Luo and Carey}{Luo and Carey}{2019}]%
+        {Luo2019a}
+\bibfield{author}{\bibinfo{person}{Chen Luo} {and} \bibinfo{person}{Michael~J
+  Carey}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{On Performance Stability in LSM-based Storage
+  Systems}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{13}, \bibinfo{number}{4} (\bibinfo{year}{2019}),
+  \bibinfo{pages}{449--462}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Luo and Carey}{Luo and Carey}{2020}]%
+        {Luo2020b}
+\bibfield{author}{\bibinfo{person}{Chen Luo} {and} \bibinfo{person}{Michael~J.
+  Carey}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{LSM-based Storage Techniques: A Survey}}.
+\newblock \bibinfo{journal}{\emph{The VLDB Journal}} \bibinfo{volume}{29},
+  \bibinfo{number}{1} (\bibinfo{year}{2020}), \bibinfo{pages}{393--418}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s00778-019-00555-y}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Luo, T{\"{o}}z{\"{u}}n, Tian, Barber, Raman,
+  and Sidle}{Luo et~al\mbox{.}}{2019}]%
+        {Luo2019b}
+\bibfield{author}{\bibinfo{person}{Chen Luo}, \bibinfo{person}{Pinar
+  T{\"{o}}z{\"{u}}n}, \bibinfo{person}{Yuanyuan Tian}, \bibinfo{person}{Ronald
+  Barber}, \bibinfo{person}{Vijayshankar Raman}, {and} \bibinfo{person}{Richard
+  Sidle}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{Umzi: Unified Multi-Zone Indexing for Large-Scale
+  HTAP}}. In \bibinfo{booktitle}{\emph{Proceedings of the International
+  Conference on Extending Database Technology (EDBT)}}. \bibinfo{pages}{1--12}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.5441/002/edbt.2019.02}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Luo, Chatterjee, Ketsetsidis, Dayan, Qin, and
+  Idreos}{Luo et~al\mbox{.}}{2020}]%
+        {Luo2020}
+\bibfield{author}{\bibinfo{person}{Siqiang Luo}, \bibinfo{person}{Subarna
+  Chatterjee}, \bibinfo{person}{Rafael Ketsetsidis}, \bibinfo{person}{Niv
+  Dayan}, \bibinfo{person}{Wilson Qin}, {and} \bibinfo{person}{Stratos
+  Idreos}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Rosetta: A Robust Space-Time Optimized Range
+  Filter for Key-Value Stores}}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the ACM SIGMOD International Conference on Management of Data}}.
+  \bibinfo{pages}{2071--2086}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3318464.3389731}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ma, Aken, Hefny, Mezerhane, Pavlo, and
+  Gordon}{Ma et~al\mbox{.}}{2018}]%
+        {Ma2018}
+\bibfield{author}{\bibinfo{person}{Lin Ma}, \bibinfo{person}{Dana~Van Aken},
+  \bibinfo{person}{Ahmed Hefny}, \bibinfo{person}{Gustavo Mezerhane},
+  \bibinfo{person}{Andrew Pavlo}, {and} \bibinfo{person}{Geoffrey~J Gordon}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Query-based Workload Forecasting for Self-Driving
+  Database Management Systems}}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the ACM SIGMOD International Conference on Management of Data}}.
+  \bibinfo{pages}{631--645}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3183713.3196908}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Mohan}{Mohan}{2016}]%
+        {Mohan2016}
+\bibfield{author}{\bibinfo{person}{C Mohan}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{Hybrid Transaction and Analytics Processing
+  (HTAP): State of the Art}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Workshop on Business Intelligence for the Real-Time Enterprise
+  (BIRTE)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mozafari, Goh, and Yoon}{Mozafari
+  et~al\mbox{.}}{2015}]%
+        {Mozafari2015}
+\bibfield{author}{\bibinfo{person}{Barzan Mozafari}, \bibinfo{person}{Eugene
+  Zhen~Ye Goh}, {and} \bibinfo{person}{Dong~Young Yoon}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{{CliffGuard: A Principled Framework for Finding
+  Robust Database Designs}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  ACM SIGMOD International Conference on Management of Data}}.
+  \bibinfo{pages}{1167--1182}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2723372.2749454}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{O'Neil, Cheng, Gawlick, and O'Neil}{O'Neil
+  et~al\mbox{.}}{1996}]%
+        {ONeil1996}
+\bibfield{author}{\bibinfo{person}{Patrick~E. O'Neil}, \bibinfo{person}{Edward
+  Cheng}, \bibinfo{person}{Dieter Gawlick}, {and} \bibinfo{person}{Elizabeth~J.
+  O'Neil}.} \bibinfo{year}{1996}\natexlab{}.
+\newblock \showarticletitle{{The log-structured merge-tree (LSM-tree)}}.
+\newblock \bibinfo{journal}{\emph{Acta Informatica}} \bibinfo{volume}{33},
+  \bibinfo{number}{4} (\bibinfo{year}{1996}), \bibinfo{pages}{351--385}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=230823.230826}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{\"{O}}zcan, Tian, and
+  T{\"{o}}z{\"{u}}n}{{\"{O}}zcan et~al\mbox{.}}{2017}]%
+        {Ozcan2017}
+\bibfield{author}{\bibinfo{person}{Fatma {\"{O}}zcan},
+  \bibinfo{person}{Yuanyuan Tian}, {and} \bibinfo{person}{Pinar
+  T{\"{o}}z{\"{u}}n}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Hybrid Transactional/Analytical Processing: A
+  Survey}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}.
+  \bibinfo{pages}{1771--1775}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3035918.3054784}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Papadomanolakis and Ailamaki}{Papadomanolakis
+  and Ailamaki}{2004}]%
+        {Papadomanolakis2004}
+\bibfield{author}{\bibinfo{person}{Stratos Papadomanolakis} {and}
+  \bibinfo{person}{Anastasia Ailamaki}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{AutoPart: Automating Schema Design for Large
+  Scientific Databases Using Data Partitioning}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the International Conference on
+  Scientific and Statistical Database Management (SSDBM)}}.
+  \bibinfo{pages}{383}.
+\newblock
+\showISBNx{0-7695-2146-0}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/SSDBM.2004.19}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Pardo}{Pardo}{2018}]%
+        {Pardo2018-ou}
+\bibfield{author}{\bibinfo{person}{Leandro Pardo}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{Statistical Inference Based on Divergence
+  Measures}}}.
+\newblock \bibinfo{publisher}{Chapman and Hall/CRC}.
+\newblock
+\showISBNx{9780429148521, 9780429148521}
+\urldef\tempurl%
+\url{https://doi.org/10.1201/9781420034813}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Pavlo, Angulo, Arulraj, Lin, Lin, Ma, Menon,
+  Mowry, Perron, Quah, Santurkar, Tomasic, Toor, Aken, Wang, Wu, Xian, and
+  Zhang}{Pavlo et~al\mbox{.}}{2017}]%
+        {Pavlo2017}
+\bibfield{author}{\bibinfo{person}{Andrew Pavlo}, \bibinfo{person}{Gustavo
+  Angulo}, \bibinfo{person}{Joy Arulraj}, \bibinfo{person}{Haibin Lin},
+  \bibinfo{person}{Jiexi Lin}, \bibinfo{person}{Lin Ma},
+  \bibinfo{person}{Prashanth Menon}, \bibinfo{person}{Todd~C Mowry},
+  \bibinfo{person}{Matthew Perron}, \bibinfo{person}{Ian Quah},
+  \bibinfo{person}{Siddharth Santurkar}, \bibinfo{person}{Anthony Tomasic},
+  \bibinfo{person}{Skye Toor}, \bibinfo{person}{Dana~Van Aken},
+  \bibinfo{person}{Ziqi Wang}, \bibinfo{person}{Yingjun Wu},
+  \bibinfo{person}{Ran Xian}, {and} \bibinfo{person}{Tieying Zhang}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Self-Driving Database Management Systems}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Biennial Conference on
+  Innovative Data Systems Research (CIDR)}}.
+\newblock
+\urldef\tempurl%
+\url{http://cidrdb.org/cidr2017/papers/p42-pavlo-cidr17.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Pezzini, Feinberg, Rayner, and
+  Edjlali}{Pezzini et~al\mbox{.}}{2014}]%
+        {Pezzini2014}
+\bibfield{author}{\bibinfo{person}{Massimo Pezzini}, \bibinfo{person}{Donald
+  Feinberg}, \bibinfo{person}{Nigel Rayner}, {and} \bibinfo{person}{Roxane
+  Edjlali}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{{Hybrid Transaction/Analytical Processing Will
+  Foster Opportunities for Dramatic Business Innovation}}.
+\newblock \bibinfo{journal}{\emph{https://www.gartner.com/doc/2657815/}}
+  (\bibinfo{year}{2014}).
+\newblock
+\urldef\tempurl%
+\url{https://www.gartner.com/doc/2657815/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ren, Zheng, Arulraj, and Gibson}{Ren
+  et~al\mbox{.}}{2017}]%
+        {Ren2017}
+\bibfield{author}{\bibinfo{person}{Kai Ren}, \bibinfo{person}{Qing Zheng},
+  \bibinfo{person}{Joy Arulraj}, {and} \bibinfo{person}{Garth Gibson}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{SlimDB: A Space-Efficient Key-Value Storage Engine
+  For Semi-Sorted Data}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{10}, \bibinfo{number}{13} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{2037--2048}.
+\newblock
+\urldef\tempurl%
+\url{http://www.vldb.org/pvldb/vol10/p2037-ren.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Research}{Research}{2019}]%
+        {GrandViewResearch2019}
+\bibfield{author}{\bibinfo{person}{Grand~View Research}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{Private Cloud Server Market Size, Share {\&} Trend
+  Analysis Report By Hosting Type (User Hosting, Provider Hosting), By
+  Organization Type (SME, Large Enterprise), By Region, And Segment Forecasts,
+  2019 - 2025}}.
+\newblock \bibinfo{journal}{\emph{White Paper}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{RocksDB}{RocksDB}{2020}]%
+        {RocksDB2020a}
+\bibfield{author}{\bibinfo{person}{RocksDB}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Leveled Compaction}}.
+\newblock
+  \bibinfo{journal}{\emph{https://github.com/facebook/rocksdb/wiki/Leveled-Compaction}}
+  (\bibinfo{year}{2020}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sarkar, Papon, Staratzis, and
+  Athanassoulis}{Sarkar et~al\mbox{.}}{2020}]%
+        {Sarkar2020}
+\bibfield{author}{\bibinfo{person}{Subhadeep Sarkar},
+  \bibinfo{person}{Tarikul~Islam Papon}, \bibinfo{person}{Dimitris Staratzis},
+  {and} \bibinfo{person}{Manos Athanassoulis}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Lethe: A Tunable Delete-Aware LSM Engine}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{893--908}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3318464.3389757}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sarkar, Staratzis, Zhu, and
+  Athanassoulis}{Sarkar et~al\mbox{.}}{2021}]%
+        {Sarkar2021c}
+\bibfield{author}{\bibinfo{person}{Subhadeep Sarkar}, \bibinfo{person}{Dimitris
+  Staratzis}, \bibinfo{person}{Zichen Zhu}, {and} \bibinfo{person}{Manos
+  Athanassoulis}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{Constructing and Analyzing the LSM Compaction
+  Design Space}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Schnaitter, Abiteboul, Milo, and
+  Polyzotis}{Schnaitter et~al\mbox{.}}{2006}]%
+        {Schnaitter2006}
+\bibfield{author}{\bibinfo{person}{Karl Schnaitter}, \bibinfo{person}{Serge
+  Abiteboul}, \bibinfo{person}{Tova Milo}, {and} \bibinfo{person}{Neoklis
+  Polyzotis}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{{COLT: Continuous On-Line Database Tuning}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD International
+  Conference on Management of Data}}. \bibinfo{pages}{793--795}.
+\newblock
+\showISBNx{1595934340}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1142473.1142592}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Schnaitter, Abiteboul, Milo, and
+  Polyzotis}{Schnaitter et~al\mbox{.}}{2007}]%
+        {Schnaitter2007}
+\bibfield{author}{\bibinfo{person}{Karl Schnaitter}, \bibinfo{person}{Serge
+  Abiteboul}, \bibinfo{person}{Tova Milo}, {and} \bibinfo{person}{Neoklis
+  Polyzotis}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{{On-Line Index Selection for Shifting Workloads}}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the IEEE International Conference
+  on Data Engineering Workshops (ICDEW)}}. \bibinfo{pages}{459--468}.
+\newblock
+\showISBNx{978-1-4244-0831-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICDEW.2007.4401029}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Schnaitter and Polyzotis}{Schnaitter and
+  Polyzotis}{2012}]%
+        {Schnaitter2012}
+\bibfield{author}{\bibinfo{person}{Karl Schnaitter} {and}
+  \bibinfo{person}{Neoklis Polyzotis}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{Semi-automatic index tuning}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{5}, \bibinfo{number}{5} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{478--489}.
+\newblock
+\showISSN{21508097}
+\urldef\tempurl%
+\url{https://doi.org/10.14778/2140436.2140444}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Schuhknecht, Dittrich, and Linden}{Schuhknecht
+  et~al\mbox{.}}{2018}]%
+        {Schuhknecht2018}
+\bibfield{author}{\bibinfo{person}{Felix~Martin Schuhknecht},
+  \bibinfo{person}{Jens Dittrich}, {and} \bibinfo{person}{Laurent Linden}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{Adaptive Adaptive Indexing}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the IEEE International Conference on
+  Data Engineering (ICDE)}}. \bibinfo{pages}{665--676}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICDE.2018.00066}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Serafini, Taft, Elmore, Pavlo, Aboulnaga, and
+  Stonebraker}{Serafini et~al\mbox{.}}{2016}]%
+        {Serafini2016}
+\bibfield{author}{\bibinfo{person}{Marco Serafini}, \bibinfo{person}{Rebecca
+  Taft}, \bibinfo{person}{Aaron~J Elmore}, \bibinfo{person}{Andrew Pavlo},
+  \bibinfo{person}{Ashraf Aboulnaga}, {and} \bibinfo{person}{Michael
+  Stonebraker}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{Clay: Fine-Grained Adaptive Partitioning for
+  General Database Schemas}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{10}, \bibinfo{number}{4} (\bibinfo{year}{2016}),
+  \bibinfo{pages}{445--456}.
+\newblock
+\urldef\tempurl%
+\url{http://www.vldb.org/pvldb/vol10/p445-serafini.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Shasha and Bonnet}{Shasha and Bonnet}{2002}]%
+        {Shasha2002}
+\bibfield{author}{\bibinfo{person}{Dennis~E Shasha} {and}
+  \bibinfo{person}{Philippe Bonnet}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{{Database Tuning: Principles, Experiments, and
+  Troubleshooting Techniques}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Very Large Data Bases (VLDB)}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sun, Franklin, Krishnan, and Xin}{Sun
+  et~al\mbox{.}}{2014}]%
+        {Sun2014}
+\bibfield{author}{\bibinfo{person}{Liwen Sun}, \bibinfo{person}{Michael~J.
+  Franklin}, \bibinfo{person}{Sanjay Krishnan}, {and}
+  \bibinfo{person}{Reynold~S. Xin}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{{Fine-grained Partitioning for Aggressive Data
+  Skipping}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}.
+  \bibinfo{pages}{1115--1126}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2588555.2610515}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sun, Franklin, Wang, and Wu}{Sun
+  et~al\mbox{.}}{2016}]%
+        {Sun2016}
+\bibfield{author}{\bibinfo{person}{Liwen Sun}, \bibinfo{person}{Michael~J.
+  Franklin}, \bibinfo{person}{Jiannan Wang}, {and} \bibinfo{person}{Eugene
+  Wu}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{Skipping-oriented Partitioning for Columnar
+  Layouts}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{10}, \bibinfo{number}{4} (\bibinfo{year}{2016}),
+  \bibinfo{pages}{421--432}.
+\newblock
+\urldef\tempurl%
+\url{http://www.vldb.org/pvldb/vol10/p421-sun.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Tarkoma, Rothenberg, and Lagerspetz}{Tarkoma
+  et~al\mbox{.}}{2012}]%
+        {Tarkoma2012}
+\bibfield{author}{\bibinfo{person}{Sasu Tarkoma},
+  \bibinfo{person}{Christian~Esteve Rothenberg}, {and} \bibinfo{person}{Eemil
+  Lagerspetz}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{Theory and Practice of Bloom Filters for
+  Distributed Systems}}.
+\newblock \bibinfo{journal}{\emph{IEEE Communications Surveys {\&} Tutorials}}
+  \bibinfo{volume}{14}, \bibinfo{number}{1} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{131--155}.
+\newblock
+\urldef\tempurl%
+\url{http://ieeexplore.ieee.org/xpl/login.jsp?arnumber=5751342}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Valentin, Zuliani, Zilio, Lohman, and
+  Skelley}{Valentin et~al\mbox{.}}{2000}]%
+        {Valentin2000}
+\bibfield{author}{\bibinfo{person}{Gary Valentin}, \bibinfo{person}{Michael
+  Zuliani}, \bibinfo{person}{Daniel~C. Zilio}, \bibinfo{person}{Guy~M. Lohman},
+  {and} \bibinfo{person}{Alan Skelley}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{{DB2 Advisor: An Optimizer Smart Enough to
+  Recommend its own Indexes}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  IEEE International Conference on Data Engineering (ICDE)}}.
+  \bibinfo{pages}{101--110}.
+\newblock
+\showISBNx{0-7695-0506-6}
+\urldef\tempurl%
+\url{http://dx.doi.org/10.1109/ICDE.2000.839397}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  and Cournapeau}{Virtanen et~al\mbox{.}}{2020}]%
+        {2020SciPy-NMeth}
+\bibfield{author}{\bibinfo{person}{Pauli Virtanen}, \bibinfo{person}{Ralf
+  Gommers}, \bibinfo{person}{Travis~E. Oliphant}, \bibinfo{person}{Matt
+  Haberland}, \bibinfo{person}{Tyler Reddy}, {and} \bibinfo{person}{et~al.
+  Cournapeau, D}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{{SciPy} 1.0: Fundamental Algorithms for Scientific
+  Computing in Python}}.
+\newblock \bibinfo{journal}{\emph{Nature Methods}}  \bibinfo{volume}{17}
+  (\bibinfo{year}{2020}), \bibinfo{pages}{261--272}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1038/s41592-019-0686-2}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{Wikipedia contributors}}{{Wikipedia
+  contributors}}{2021}]%
+        {enwiki:1025193696}
+\bibfield{author}{\bibinfo{person}{{Wikipedia contributors}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Bloom filter --- {Wikipedia}{,} The Free
+  Encyclopedia}.
+\newblock
+  \bibinfo{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Bloom_filter&oldid=1025193696}}.
+\newblock
+\newblock
+\shownote{[Online; accessed 8-June-2021].}
+
+
+\bibitem[\protect\citeauthoryear{WiredTiger}{WiredTiger}{2021}]%
+        {WiredTiger}
+\bibfield{author}{\bibinfo{person}{WiredTiger}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{Source Code}}.
+\newblock \bibinfo{journal}{\emph{https://github.com/wiredtiger/wiredtiger}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wolski, Brevik, Chard, and Chard}{Wolski
+  et~al\mbox{.}}{2017}]%
+        {Wolski2017}
+\bibfield{author}{\bibinfo{person}{Rich Wolski}, \bibinfo{person}{John Brevik},
+  \bibinfo{person}{Ryan Chard}, {and} \bibinfo{person}{Kyle Chard}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{Probabilistic guarantees of execution duration for
+  Amazon spot instances}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference for High Performance Computing, Networking, Storage
+  and Analysis (SC)}}. \bibinfo{pages}{18:1----18:11}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3126908.3126953}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Yang, Wu, Zhang, Cheng, Li, Zou, Wang, Chen,
+  Wang, and Huang}{Yang et~al\mbox{.}}{2020}]%
+        {Yang2020}
+\bibfield{author}{\bibinfo{person}{Lei Yang}, \bibinfo{person}{Hong Wu},
+  \bibinfo{person}{Tieying Zhang}, \bibinfo{person}{Xuntao Cheng},
+  \bibinfo{person}{Feifei Li}, \bibinfo{person}{Lei Zou},
+  \bibinfo{person}{Yujie Wang}, \bibinfo{person}{Rongyao Chen},
+  \bibinfo{person}{Jianying Wang}, {and} \bibinfo{person}{Gui Huang}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{Leaper: A Learned Prefetcher for Cache
+  Invalidation in LSM-tree based Storage Engines}}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the VLDB Endowment}}
+  \bibinfo{volume}{13}, \bibinfo{number}{11} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{1976--1989}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Lim, Leis, Andersen, Kaminsky, Keeton,
+  and Pavlo}{Zhang et~al\mbox{.}}{2018}]%
+        {Zhang2018a}
+\bibfield{author}{\bibinfo{person}{Huanchen Zhang}, \bibinfo{person}{Hyeontaek
+  Lim}, \bibinfo{person}{Viktor Leis}, \bibinfo{person}{David~G Andersen},
+  \bibinfo{person}{Michael Kaminsky}, \bibinfo{person}{Kimberly Keeton}, {and}
+  \bibinfo{person}{Andrew Pavlo}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{{SuRF: Practical Range Query Filtering with Fast
+  Succinct Tries}}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM SIGMOD
+  International Conference on Management of Data}}. \bibinfo{pages}{323--336}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3183713.3196931}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Lim, Leis, Andersen, Kaminsky, Keeton,
+  and Pavlo}{Zhang et~al\mbox{.}}{2020a}]%
+        {Zhang2020a}
+\bibfield{author}{\bibinfo{person}{Huanchen Zhang}, \bibinfo{person}{Hyeontaek
+  Lim}, \bibinfo{person}{Viktor Leis}, \bibinfo{person}{David~G Andersen},
+  \bibinfo{person}{Michael Kaminsky}, \bibinfo{person}{Kimberly Keeton}, {and}
+  \bibinfo{person}{Andrew Pavlo}.} \bibinfo{year}{2020}\natexlab{a}.
+\newblock \showarticletitle{{Succinct Range Filters}}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Database Systems (TODS)}}
+  \bibinfo{volume}{45}, \bibinfo{number}{2} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{5:1----5:31}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3375660}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Wang, Cheng, Xu, Yu, Huang, Zhang, He,
+  Li, Cao, Huang, and Sun}{Zhang et~al\mbox{.}}{2020b}]%
+        {Zhang2020}
+\bibfield{author}{\bibinfo{person}{Teng Zhang}, \bibinfo{person}{Jianying
+  Wang}, \bibinfo{person}{Xuntao Cheng}, \bibinfo{person}{Hao Xu},
+  \bibinfo{person}{Nanlong Yu}, \bibinfo{person}{Gui Huang},
+  \bibinfo{person}{Tieying Zhang}, \bibinfo{person}{Dengcheng He},
+  \bibinfo{person}{Feifei Li}, \bibinfo{person}{Wei Cao},
+  \bibinfo{person}{Zhongdong Huang}, {and} \bibinfo{person}{Jianling Sun}.}
+  \bibinfo{year}{2020}\natexlab{b}.
+\newblock \showarticletitle{{FPGA-Accelerated Compactions for LSM-based
+  Key-Value Store}}. In \bibinfo{booktitle}{\emph{18th USENIX Conference on
+  File and Storage Technologies, FAST 2020, Santa Clara, CA, USA, February
+  24-27, 2020}}. \bibinfo{pages}{225--237}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zilio, Rao, Lightstone, Lohman, Storm,
+  Garcia-Arellano, and Fadden}{Zilio et~al\mbox{.}}{2004}]%
+        {Zilio2004}
+\bibfield{author}{\bibinfo{person}{Daniel~C. Zilio}, \bibinfo{person}{Jun Rao},
+  \bibinfo{person}{Sam Lightstone}, \bibinfo{person}{Guy~M. Lohman},
+  \bibinfo{person}{Adam Storm}, \bibinfo{person}{Christian Garcia-Arellano},
+  {and} \bibinfo{person}{Scott Fadden}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{{DB2 Design Advisor: Integrated Automatic Physical
+  Database Design}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  International Conference on Very Large Data Bases (VLDB)}}.
+  \bibinfo{pages}{1087--1097}.
+\newblock
+\showISBNx{0-12-088469-0}
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1316689.1316783}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

@@ -1,0 +1,199 @@
+\section{Algorithms for  {\large {\robustw}}}
+
+In this section, we discuss our solutions to the {\robustw} problem. 
+On a high level, the solution strategy is the following:
+first, we express the objective of the problem (as expressed in 
+    Equation~\eqref{eq:robust_workload_problem}) as standard continuous
+    optimization problem.  
+We then take the \emph{dual} of this problem and use existing results in robust optimization to show:
+    $(i)$ the duality gap between the primal and the dual is zero, and 
+    $(ii)$ the dual problem is solvable in polynomial time.
+Thus, the dual solution can be translated into the optimal solution for the primal, i.e.,
+the original {\robustw} problem.  
+%Computationally, in the {\robustw} problem, the dual (and consequently the primal) 
+%problem can in fact be solved optimally in polynomial time and thus the solutions we obtain for this problem are optimal.
+%On the other hand, in the {\robustm} problem we approximate the dual problem and consequently the solution we get for 
+%{\robustm} is only an upper bound of the optimal solution -- yet a very good solution in practice. 
+The specifics of the methodology are described below: 
+
+\Paragraph{Defining the Uncertainty Region $\mathcal{U}_\workload$}  Recall that 
+$\workload$ is a probability vector, i.e., 
+    $\workload^\intercal\columnvec = 1$. Thus, in order to define the uncertainty region 
+    $\mathcal{U}_\workload$, we use the Kullback-Leibler (KL) divergence
+    function~\cite{Kullback1951}. KL-divergence for two probability
+    distributions defined as follows:
+ 
+\begin{definition}\label{def:KL}   
+    The KL-divergence distance between two vectors
+    $\vec{p} = (p_1, \cdots, p_m)^\intercal \geq 0$ and
+    $\vec{q} = (q_1, \cdots, q_m)^\intercal \geq 0$ in 
+    $\mathbb{R}^m$ is defined as,
+\begin{equation*}
+    I_{KL}(\vec{p}, \vec{q}) = \sum_{i=1}^{m}p_i \log\bigg(\frac{p_i}{q_i}\bigg).
+\end{equation*}
+\end{definition}
+Note that we could have potentially used other divergence
+    functions~\cite{Pardo2018-ou} instead of the KL-divergence.
+We use the KL-divergence as we believe it fits our goal and intuitive
+    understanding of the space of workloads.
+
+Using the notion of KL-divergence we can now formalize the uncertainty
+    region around an expected workload {\workload} as follows,
+    \begin{equation}\label{eq:workloaduncertaintyregion}
+        \mathcal{U}_{\workload}^\rho = \{\obsworkload \in \mathbb{R}^4\textrm{
+            }|\textrm{  } \obsworkload
+    \geq 0, \obsworkload^\intercal\columnvec = 1, I_{KL}(\obsworkload,
+    \workload) \leq \rho\}.
+    \end{equation}
+   
+Here, $\rho$ determines the maximum KL-divergence that is allowed between any
+    workload $\obsworkload$ in the uncertainty region and the input expected
+    workload $\workload$. 
+Note that the definition of the uncertainty region takes as input the parameter
+    $\rho$, that intuitively defines the neighborhood around the expected
+    workload. 
+This $\rho$ can be computed as the mean KL-divergence from the historical
+    workloads.  
+% The exact procedure for setting the value of $\rho$ is discussed in Section~\ref{sec:rhow}.
+
+In terms of notation, $\rho$ input is required for defining the uncertainty
+    region $\mathcal{U}_\workload^\rho$.
+However, we drop the superscript notation unless required for context.
+
+\Paragraph{Rewriting of the {\robustw} Problem (Primal)}
+Using the above definition of the workload uncertainty region 
+    $\mathcal{U}_\workload^\rho$, we are now ready to proceed to the solution of
+    the {\robustw} problem. 
+For a given $\rho$, the problem definition as captured by
+    Equation~\eqref{eq:robust_workload_problem} can be rewritten as follows:
+    \begin{equation}\label{eq:robust_tuning_problem1}
+        \min_{\configuration} \max_{\obsworkload \in \mathcal{U}_{\workload}^\rho}
+        \obsworkload^\intercal \costvec(\configuration).
+    \end{equation}
+Note that the above equation is a simple rewrite of
+    Equation~\eqref{eq:robust_tuning_problem1} that captures the intuition that
+    the optimization is done over the \emph{worst-case} workload among all the
+    workloads in the uncertainty region $\mathcal{U}_\workload$.
+An equivalent way of writing Equation~\eqref{eq:robust_tuning_problem1} is by
+    introducing an additional variable $\beta\in\mathbb{R}$, then writing the
+    following:
+\begin{eqnarray}
+\label{eq:robust_counterpart_workload_problem}
+\min_{\beta, \configuration}&\beta& \nonumber\\
+    \textrm{s.t.,}&\obsworkload^\intercal\costvec(\configuration) \leq \beta
+                  &\forall  \obsworkload \in \mathcal{U}_{\workload}.
+\end{eqnarray}
+This reformulation allows us to remove the $\min\max$ term in the objective from 
+    Equation~\eqref{eq:robust_tuning_problem1}. 
+% and is difficult to deal with when trying to express the problem as a convex
+% optimization problem.
+The constraint in Equation~\eqref{eq:robust_counterpart_workload_problem}
+    can be equivalently expressed as,
+\begin{eqnarray*}
+\label{eq:inner_optimization}
+    \beta &\geq&
+    \max_{\obsworkload}\big\{\obsworkload^\intercal\costvec(\configuration) | \obsworkload \in
+    \mathcal{U}_{\workload}\big\}\nonumber\\
+    &=&\max_{\obsworkload \geq
+0}\bigg\{\obsworkload^\intercal\costvec(\configuration)\bigg|\obsworkload^\intercal\columnvec
+= 1, \sum_{i=1}^{m} \hat{w}_i \log\bigg(\frac{\hat{w}_i}{w_i}\bigg) \leq \rho\bigg\}.
+\end{eqnarray*}
+Finally, the Lagrange function for the optimization on the right-hand side of the above equation is:
+\begin{equation*}
+    \mathcal{L}(\obsworkload, \lambda, \eta) =
+    \obsworkload^\intercal\costvec(\configuration) + \rho \lambda - \lambda
+    \sum_{i=1}^{m}\hat{w}_i \log\bigg(\frac{\hat{w}_i}{w_i}\bigg) + \eta(1 -
+    \obsworkload^\intercal \columnvec),
+\end{equation*}
+where $\lambda$ and $\eta$ are the Lagrangian variables. 
+
+\Paragraph{Formulating the Dual Problem}
+We can now express the dual objective as,
+\begin{equation}\label{eq:dual}
+    g(\lambda, \eta) = \max_{\obsworkload \geq 0}\mathcal{L}(\obsworkload,
+    \lambda, \eta),
+\end{equation}
+which we need to \emph{minimize}.
+
+% Now for the $\workload \in \mathcal{U}_{\workload}^\rho$, we can use the following result~\cite{Ben-Tal2013-kw}.
+Now we borrow the following result from ~\cite{Ben-Tal2013-kw},
+\begin{lemma}[\cite{Ben-Tal2013-kw}]
+A configuration {\configuration} is the optimal solution to the {\robustw} problem
+if and only if $\min_{\eta, \lambda \geq
+    0}g(\lambda, \eta) \leq \beta$ where the minimum is attained for some value of
+    $\lambda \geq 0$.
+\end{lemma}
+In other words, minimizing the dual objective $g(\lambda, \eta)$ (as expressed
+    in Equation~\eqref{eq:dual}) will lead to the optimal solution for the
+    {\robustw} problem. 
+
+\Paragraph{Solving the Dual Optimization Problem Optimally} Formulating the 
+dual problem and using the results of 
+Ben-Tal~\etal~\cite{Ben-Tal2013-kw}, we have shown that the dual solution 
+leads to the optimal solution for the {\robustw} problem.
+Moreover, we can obtain the optimal solution
+    to the original {\robustw} problem in polynomial time, as consequence of the
+    tractability of the dual objective. 
+
+To solve the dual problem, we first simplify the dual objective
+$g(\lambda,\eta)$ so that it takes the following form:
+\begin{equation}\label{eq:final_dual_rewrite}
+ g(\lambda,\eta) = \eta + \rho \lambda + \lambda
+    \sum_{i=1}^{k}w_i\phi_{KL}^* \bigg(\frac{\costvec_i(\configuration) - \eta}{\lambda}\bigg).
+\end{equation}
+
+In Equation~\eqref{eq:final_dual_rewrite}, $\phi_{KL}^*(.)$ denotes the conjugate of KL-divergence function
+and $\costvec_i$ corresponds to the $i$-th dimension of the cost vector $\costvec(\configuration)$ as defined in
+Section~\ref{sec:notation} -- clearly in this case $k=4$ as we have $4$ types of queries in our workload.
+Results of Ben-Tal~\etal~\cite{Ben-Tal2013-kw} show that 
+% \begin{lemma}
+minimizing the dual function as described in Equation~\eqref{eq:final_dual_rewrite} is a convex optimization problem,
+and it can be solved optimally in polynomial time if and only if the cost function $\costvec(\configuration)$
+is convex in all its dimensions.
+% \end{lemma}
+
+% The proof of the above Lemma is based on the fact that $\costvec(\configuration)$ is convex in {\configuration} in all its
+%     dimensions i.e., cost function for each query type is convex, 
+%     and the set of feasible configurations is a convex.  
+% This is indeed the case for our setting and therefore the above lemma
+%     is true.
+In our case, the cost function for the range queries is not convex with respect
+    to size-ratio {\sizeratio} for the tiering policy.
+However, on account of its smooth non-decreasing form, we are still able
+    to find the global minimum solution for 
+\begin{eqnarray}
+\min_{\configuration, \lambda \geq 0, \eta}
+\bigg\{\eta + \rho \lambda + \lambda
+    \sum_{i=1}^{m}w_i\phi_{KL}^* \bigg(\frac{c_i(\configuration) -
+\eta}{\lambda}\bigg)\bigg\}.
+\end{eqnarray}
+This minimization problem can be solved using the 
+    Sequential Least Squares Quadratic Programming solver (SLSQP) included in 
+    the popular Python optimization library SciPy \cite{2020SciPy-NMeth}.
+Solving this problem outputs the values of the Lagrangian variables $\lambda$ 
+    and $\eta$ and most importantly the configuration $\configuration$ that 
+    optimizes the objective of the {\robustw} problem -- for input $\rho$.
+In terms of running time, SLSQP solver outputs a robust tuning configuration 
+    for a given input in less than a second.
+
+% Specifically, the robust counterpart problem in
+%     Equation~\ref{eq:robust_counterpart_workload_problem} is equivalent to
+% \begin{equation}
+% \min_{\configuration, \lambda \geq 0, \eta} 
+% \Big\{
+%     \eta + \rho\lambda + \lambda\sum_{i} w_i
+%     \phi^*\Big(\frac{c_i(\configuration) - \eta}{\lambda}\Big)
+% \Big\}.
+% \end{equation}
+% where $\phi^*(.)$ is the conjugate of the divergence function given by
+% \begin{equation}
+% \phi_{KL}^*(s) = e^{s} - 1
+% \end{equation}
+% in case of Kullback-Leibler divergence.
+% This is a convex optimization problem if $\costvec(\configuration)$ is convex
+%     in {\configuration} in all its dimensions, and the feasible set of 
+%     configurations is convex.\todo{Introduce convex surrogate
+%     function for the \emph{range lookup} cost; it is not convex currently.}
+% We refer the readers to ~\cite{Ben-Tal2013-kw} in which the authors prove the
+%     corresponding corollary for a concave maximization problem.
+

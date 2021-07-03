@@ -1,0 +1,180 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: bibliography.bib
+Database file #2: library.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in Absalyamov2018
+Warning--empty address in Absalyamov2018
+Warning--empty publisher in Agrawal2004
+Warning--empty address in Agrawal2004
+Warning--empty publisher in Agrawal2000
+Warning--empty address in Agrawal2000
+Warning--empty publisher in Aken2017
+Warning--empty address in Aken2017
+Warning--no number and no volume in ApacheCassandra
+Warning--page numbers missing in both pages and numpages fields in ApacheCassandra
+Warning--empty publisher in Bruno2005
+Warning--empty address in Bruno2005
+Warning--empty publisher in Bruno2006
+Warning--empty address in Bruno2006
+Warning--empty publisher in Chang2006
+Warning--empty address in Chang2006
+Warning--empty publisher in Chaudhuri2004a
+Warning--empty address in Chaudhuri2004a
+Warning--empty publisher in Chaudhuri1997
+Warning--empty address in Chaudhuri1997
+Warning--empty publisher in Chaudhuri1998a
+Warning--empty address in Chaudhuri1998a
+Warning--empty publisher in Chaudhuri2005
+Warning--empty address in Chaudhuri2005
+Warning--empty publisher in Chohan2010
+Warning--empty address in Chohan2010
+Warning--page numbers missing in both pages and numpages fields in Chohan2010
+Warning--empty publisher in Dageville2004
+Warning--empty address in Dageville2004
+Warning--empty publisher in Dayan2017
+Warning--empty address in Dayan2017
+Warning--empty publisher in Dayan2018
+Warning--empty address in Dayan2018
+Warning--empty publisher in Dayan2019
+Warning--empty address in Dayan2019
+Warning--empty publisher in Dong2017
+Warning--empty address in Dong2017
+Warning--page numbers missing in both pages and numpages fields in Dong2017
+Warning--empty year in FacebookMyRocks
+Warning--no number and no volume in FacebookMyRocks
+Warning--page numbers missing in both pages and numpages fields in FacebookMyRocks
+Warning--no number and no volume in FacebookRocksDB
+Warning--page numbers missing in both pages and numpages fields in FacebookRocksDB
+Warning--empty publisher in Galante2012
+Warning--empty address in Galante2012
+Warning--no number and no volume in GoogleLevelDB
+Warning--page numbers missing in both pages and numpages fields in GoogleLevelDB
+Warning--empty publisher in Graefe2010a
+Warning--empty address in Graefe2010a
+Warning--empty publisher in Graefe2010c
+Warning--empty address in Graefe2010c
+Warning--no number and no volume in HBase2013
+Warning--page numbers missing in both pages and numpages fields in HBase2013
+Warning--empty publisher in Herbst2013
+Warning--empty address in Herbst2013
+Warning--no number and no volume in Holze2010
+Warning--empty publisher in Huang2019
+Warning--empty address in Huang2019
+Warning--empty publisher in Idreos2019
+Warning--empty address in Idreos2019
+Warning--page numbers missing in both pages and numpages fields in Idreos2019
+Warning--empty publisher in Idreos2007
+Warning--empty address in Idreos2007
+Warning--page numbers missing in both pages and numpages fields in Idreos2007
+Warning--empty publisher in Idreos2019a
+Warning--empty address in Idreos2019a
+Warning--page numbers missing in both pages and numpages fields in Idreos2019a
+Warning--empty publisher in Idreos2018
+Warning--empty address in Idreos2018
+Warning--no number and no volume in Intel2011
+Warning--page numbers missing in both pages and numpages fields in Intel2011
+Warning--empty publisher in Luo2020a
+Warning--empty address in Luo2020a
+Warning--empty publisher in Luo2019b
+Warning--empty address in Luo2019b
+Warning--empty publisher in Luo2020
+Warning--empty address in Luo2020
+Warning--empty publisher in Ma2018
+Warning--empty address in Ma2018
+Warning--empty publisher in Mohan2016
+Warning--empty address in Mohan2016
+Warning--page numbers missing in both pages and numpages fields in Mohan2016
+Warning--empty publisher in Mozafari2015
+Warning--empty address in Mozafari2015
+Warning--empty publisher in Ozcan2017
+Warning--empty address in Ozcan2017
+Warning--empty publisher in Papadomanolakis2004
+Warning--empty address in Papadomanolakis2004
+Warning--empty address in Pardo2018-ou
+Warning--empty publisher in Pavlo2017
+Warning--empty address in Pavlo2017
+Warning--page numbers missing in both pages and numpages fields in Pavlo2017
+Warning--no number and no volume in Pezzini2014
+Warning--page numbers missing in both pages and numpages fields in Pezzini2014
+Warning--no number and no volume in GrandViewResearch2019
+Warning--page numbers missing in both pages and numpages fields in GrandViewResearch2019
+Warning--no number and no volume in RocksDB2020a
+Warning--page numbers missing in both pages and numpages fields in RocksDB2020a
+Warning--empty publisher in Sarkar2020
+Warning--empty address in Sarkar2020
+Warning--no number and no volume in Sarkar2021c
+Warning--page numbers missing in both pages and numpages fields in Sarkar2021c
+Warning--empty publisher in Schnaitter2006
+Warning--empty address in Schnaitter2006
+Warning--empty publisher in Schnaitter2007
+Warning--empty address in Schnaitter2007
+Warning--empty publisher in Schuhknecht2018
+Warning--empty address in Schuhknecht2018
+Warning--empty publisher in Shasha2002
+Warning--empty address in Shasha2002
+Warning--page numbers missing in both pages and numpages fields in Shasha2002
+Warning--empty publisher in Sun2014
+Warning--empty address in Sun2014
+Warning--empty publisher in Valentin2000
+Warning--empty address in Valentin2000
+Warning--no number and no volume in WiredTiger
+Warning--page numbers missing in both pages and numpages fields in WiredTiger
+Warning--empty publisher in Wolski2017
+Warning--empty address in Wolski2017
+Warning--empty publisher in Zhang2018a
+Warning--empty address in Zhang2018a
+Warning--empty publisher in Zhang2020
+Warning--empty address in Zhang2020
+Warning--empty publisher in Zilio2004
+Warning--empty address in Zilio2004
+You've used 87 entries,
+            5719 wiz_defined-function locations,
+            1877 strings with 33238 characters,
+and the built_in function-call counts, 112794 in all, are:
+= -- 13866
+> -- 4667
+< -- 0
++ -- 1550
+- -- 1594
+* -- 8389
+:= -- 11549
+add.period$ -- 429
+call.type$ -- 87
+change.case$ -- 695
+chr.to.int$ -- 83
+cite$ -- 212
+duplicate$ -- 9643
+empty$ -- 6715
+format.name$ -- 1874
+if$ -- 27041
+int.to.chr$ -- 6
+int.to.str$ -- 1
+missing$ -- 384
+newline$ -- 920
+num.names$ -- 692
+pop$ -- 3790
+preamble$ -- 1
+purify$ -- 1464
+quote$ -- 0
+skip$ -- 3393
+stack$ -- 0
+substring$ -- 8207
+swap$ -- 1019
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2042
+warning$ -- 125
+while$ -- 674
+width$ -- 0
+write$ -- 1682
+(There were 125 warnings)

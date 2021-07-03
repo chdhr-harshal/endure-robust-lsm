@@ -1,0 +1,269 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{ONeil1996}
+\citation{FacebookRocksDB}
+\citation{GoogleLevelDB}
+\citation{Chang2006}
+\citation{HBase2013}
+\citation{ApacheCassandra}
+\citation{WiredTiger}
+\citation{Huang2019}
+\citation{DeCandia2007}
+\citation{Luo2020b}
+\citation{Sarkar2021c}
+\citation{Bloom1970}
+\citation{Dayan2017,Dayan2018a}
+\citation{Dayan2018,Dayan2019,Idreos2019}
+\citation{Bortnikov2018,Kim2020,Luo2020a}
+\citation{Luo2020,Zhang2018a,Zhang2020a}
+\citation{Alkowaileet2020,Luo2019a,Sarkar2020,Zhang2020}
+\citation{Yang2020,Ren2017,Absalyamov2018}
+\citation{Chaudhuri2004a,Chaudhuri2005,Shasha2002}
+\citation{Hayes2008,Intel2011,GrandViewResearch2019}
+\citation{Chohan2010,Galante2012,Herbst2013,Holze2010,Mohan2016,Ozcan2017,Pezzini2014,Schnaitter2006,Schnaitter2007,Schnaitter2012,Wolski2017}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces LSM tree tunings and their performance on observed workloads. While both workloads have a similar ratio of reads and writes, the uncertain workload has a higher percentage of range queries leading to the expected system tuning to experience a $2\times $ degradation in performance.\relax }}{1}{figure.caption.3}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:introduction_query_seq}{{1}{1}{LSM tree tunings and their performance on observed workloads. While both workloads have a similar ratio of reads and writes, the uncertain workload has a higher percentage of range queries leading to the expected system tuning to experience a $2\times $ degradation in performance.\relax }{figure.caption.3}{}}
+\citation{Bertsimas2010,Ben-Tal1998,Ben-Tal2013}
+\citation{github-repo}
+\citation{Dayan2018a,Luo2020,Sarkar2020}
+\citation{Dong2017,ONeil1996}
+\citation{Dayan2018,Dayan2019}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background on LSM Trees}{2}{section.2}}
+\newlabel{sec:background}{{2}{2}{Background on LSM Trees}{section.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview of the structure of an LSM tree\relax }}{2}{figure.caption.4}}
+\newlabel{fig:lsm-overview}{{2}{2}{Overview of the structure of an LSM tree\relax }{figure.caption.4}{}}
+\newlabel{eq:levels}{{1}{2}{Background on LSM Trees}{equation.2.1}{}}
+\citation{Dayan2017,Dayan2018a}
+\citation{Dayan2017,FacebookRocksDB}
+\citation{Bloom1970}
+\citation{Dong2017}
+\citation{Dayan2017}
+\citation{Dayan2017,Kim2020,Luo2020a}
+\citation{Dayan2018a}
+\citation{Dayan2018,Dayan2019,Sarkar2021c}
+\citation{Luo2019b}
+\citation{Luo2019a}
+\citation{Dayan2017,Dayan2018a,Luo2020b}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem Definitions}{3}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Notation}{3}{subsection.3.1}}
+\newlabel{sec:notation}{{3.1}{3}{Notation}{subsection.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \emph  {Design} parameters of an LSM tree.\relax }}{3}{table.caption.5}}
+\newlabel{tab:model-design-params}{{1}{3}{\emph {Design} parameters of an LSM tree.\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \emph  {System} and untunable parameters of an LSM tree.\relax }}{3}{table.caption.6}}
+\newlabel{tab:model-system-params}{{2}{3}{\emph {System} and untunable parameters of an LSM tree.\relax }{table.caption.6}{}}
+\citation{Dayan2017,Dayan2018a,Luo2020a}
+\citation{Kullback1951}
+\citation{Pardo2018-ou}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Parameters describing the \emph  {workload}.\relax }}{4}{table.caption.7}}
+\newlabel{tab:workload-params}{{3}{4}{Parameters describing the \emph {workload}.\relax }{table.caption.7}{}}
+\newlabel{eq:thecost}{{2}{4}{Notation}{equation.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The Nominal Tuning Problem}{4}{subsection.3.2}}
+\newlabel{problem:nominal}{{1}{4}{\nominal }{problem.1}{}}
+\newlabel{eq:nominal_problem}{{3}{4}{\nominal }{equation.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The Robust Tuning Problem}{4}{subsection.3.3}}
+\newlabel{subsec:robust-tuning}{{3.3}{4}{The Robust Tuning Problem}{subsection.3.3}{}}
+\newlabel{problem:robustw}{{2}{4}{\robustw }{problem.2}{}}
+\newlabel{eq:robust_workload_problem}{{4}{4}{\robustw }{equation.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Algorithms for {\large  {{\sc  Robust Tuning}}}}{4}{section.4}}
+\newlabel{def:KL}{{1}{4}{}{definition.1}{}}
+\newlabel{eq:workloaduncertaintyregion}{{5}{4}{Algorithms for {\large {\robustw }}}{equation.4.5}{}}
+\citation{Ben-Tal2013-kw}
+\citation{Ben-Tal2013-kw}
+\citation{Ben-Tal2013-kw}
+\citation{Ben-Tal2013-kw}
+\citation{2020SciPy-NMeth}
+\citation{Dayan2018a,Luo2020}
+\citation{Tarkoma2012}
+\citation{enwiki:1025193696}
+\citation{Dayan2017,Dayan2018a}
+\newlabel{eq:robust_tuning_problem1}{{6}{5}{Algorithms for {\large {\robustw }}}{equation.4.6}{}}
+\newlabel{eq:robust_counterpart_workload_problem}{{7}{5}{Algorithms for {\large {\robustw }}}{equation.4.7}{}}
+\newlabel{eq:inner_optimization}{{8}{5}{Algorithms for {\large {\robustw }}}{}{}}
+\newlabel{eq:dual}{{8}{5}{Algorithms for {\large {\robustw }}}{equation.4.8}{}}
+\newlabel{eq:final_dual_rewrite}{{9}{5}{Algorithms for {\large {\robustw }}}{equation.4.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}The Cost Model of LSM Trees}{5}{section.5}}
+\newlabel{sec:tuning_lsm_trees}{{5}{5}{The Cost Model of LSM Trees}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Model Basics}{5}{subsection.5.1}}
+\newlabel{eq:bloom}{{5.1}{5}{Model Basics}{subsection.5.1}{}}
+\newlabel{eq:bloom2}{{11}{6}{Model Basics}{equation.5.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The Cost Model}{6}{subsection.5.2}}
+\newlabel{eq:read}{{12}{6}{The Cost Model}{equation.5.12}{}}
+\newlabel{eq:read-non-empty}{{14}{6}{The Cost Model}{equation.5.14}{}}
+\newlabel{eq:range}{{15}{6}{The Cost Model}{equation.5.15}{}}
+\newlabel{eq:write}{{16}{6}{The Cost Model}{equation.5.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Uncertainty Benchmark}{6}{section.6}}
+\newlabel{sec:uncertainty-benchmark}{{6}{6}{Uncertainty Benchmark}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces KL-divergence $I_{KL}({{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}, w)$ histograms of the sampled workloads wrt. to expected workloads ${{\ensuremath  {\bf  {w}}}}_0$ and ${{\ensuremath  {\bf  {w}}}}_1$.\relax }}{7}{figure.caption.9}}
+\newlabel{fig:KL_divergence_histogram}{{3}{7}{KL-divergence $I_{KL}(\obsworkload , w)$ histograms of the sampled workloads wrt. to expected workloads $\workload _0$ and $\workload _1$.\relax }{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Expected workloads.\relax }}{7}{table.caption.8}}
+\newlabel{tab:expected-workloads}{{4}{7}{Expected workloads.\relax }{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Delta throughput $\Delta _{{{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}}(\Phi _{N}, \Phi _{R})$ between the nominal and expected tunings across various expected workloads. \relax }}{7}{figure.caption.10}}
+\newlabel{fig:delta_throughput_workload_type}{{4}{7}{Delta throughput $\Delta _{\obsworkload }(\Phi _{N}, \Phi _{R})$ between the nominal and expected tunings across various expected workloads. \relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Model Evaluation}{7}{section.7}}
+\newlabel{sec:model-evaluation}{{7}{7}{Model Evaluation}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Evaluation Metrics}{7}{subsection.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Experiment Design}{7}{subsection.7.2}}
+\citation{2020SciPy-NMeth}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Impact of $\rho $ on normalized delta throughput $\Delta _{{{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}}(\Phi _{N}, \Phi _{R})$ for tunings with expected workload ${{\ensuremath  {\bf  {w}}}}_{11}$. \relax }}{8}{figure.caption.11}}
+\newlabel{fig:scatterplot_evolution_rho}{{5}{8}{Impact of $\rho $ on normalized delta throughput $\Delta _{\obsworkload }(\Phi _{N}, \Phi _{R})$ for tunings with expected workload $\workload _{11}$. \relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Results}{8}{subsection.7.3}}
+\newlabel{sec:model-results}{{7.3}{8}{Results}{subsection.7.3}{}}
+\citation{FacebookMyRocks}
+\citation{RocksDB2020a}
+\citation{Dayan2017}
+\newlabel{fig:overlapping_histogram}{{6a}{9}{Histograms of throughput $1 / C(\obsworkload , \Phi )$ for tunings with expected workload $\workload _{11}$ \relax }{figure.caption.12}{}}
+\newlabel{sub@fig:overlapping_histogram}{{a}{9}{Histograms of throughput $1 / C(\obsworkload , \Phi )$ for tunings with expected workload $\workload _{11}$ \relax }{figure.caption.12}{}}
+\newlabel{fig:throughput_range_evolution}{{6b}{9}{Throughput range $\Theta _{\mathcal {B}}(\Phi )$\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:throughput_range_evolution}{{b}{9}{Throughput range $\Theta _{\mathcal {B}}(\Phi )$\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Impact of $\rho $ on throughput.\relax }}{9}{figure.caption.12}}
+\newlabel{fig:rho_throughput_range_impact}{{6}{9}{Impact of $\rho $ on throughput.\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Delta throughputs $\Delta _{{{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}}(\Phi _{N}, \Phi _{R})$ for $\rho $ vs $I_{KL}({{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}, {{\ensuremath  {\bf  {w}}}})$.\relax }}{9}{figure.caption.13}}
+\newlabel{fig:rho_vs_rho_hat}{{7}{9}{Delta throughputs $\Delta _{\obsworkload }(\Phi _{N}, \Phi _{R})$ for $\rho $ vs $I_{KL}(\obsworkload , \workload )$.\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}System Evaluation}{9}{section.8}}
+\newlabel{sec:system-evaluation}{{8}{9}{System Evaluation}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Experimental Setup \& Implementation}{9}{subsection.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Experiment Design}{9}{subsection.8.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces System (top) and model (bottom) performance for robust and nominal tunings in a read-only query sequence. Here the tuning parameter $\rho $ closely matches the observed value of $I_{KL}({{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}, {{\ensuremath  {\bf  {w}}}}_{7})$. Each session contains the label and average workload. \relax }}{10}{figure.caption.14}}
+\newlabel{fig:query_seq_reads_2}{{8}{10}{System (top) and model (bottom) performance for robust and nominal tunings in a read-only query sequence. Here the tuning parameter $\rho $ closely matches the observed value of $I_{KL}(\obsworkload , \workload _{7})$. Each session contains the label and average workload. \relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Read-only query sequence when the observed workloads {{{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}} do not deviate from the expected. \relax }}{10}{figure.caption.15}}
+\newlabel{fig:query_seq_reads_1}{{9}{10}{Read-only query sequence when the observed workloads {\obsworkload } do not deviate from the expected. \relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Empirical Measurements}{10}{subsection.8.3}}
+\newlabel{sec:empirical_measurements}{{8.3}{10}{Empirical Measurements}{subsection.8.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Results}{10}{subsection.8.4}}
+\newlabel{sec:system-results}{{8.4}{10}{Results}{subsection.8.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Read and write workload sequence where $\rho $ and $I_{KL}({{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}, {{\ensuremath  {\bf  {w}}}})$ closely match.\relax }}{11}{figure.caption.16}}
+\newlabel{fig:query_seq_hybrid_1}{{10}{11}{Read and write workload sequence where $\rho $ and $I_{KL}(\obsworkload , \workload )$ closely match.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Read and write workload sequence where $\rho $ and $I_{KL}({{\ensuremath  {\mathaccentV {hat}05E{\bf  {w}}}}}, {{\ensuremath  {\bf  {w}}}})$ closely match.\relax }}{11}{figure.caption.17}}
+\newlabel{fig:query_seq_hybrid_2}{{11}{11}{Read and write workload sequence where $\rho $ and $I_{KL}(\obsworkload , \workload )$ closely match.\relax }{figure.caption.17}{}}
+\citation{Bruno2005,Chaudhuri1998a}
+\citation{Agrawal2004,Agrawal2000,Chaudhuri1997,Dageville2004,Valentin2000,Zilio2004}
+\citation{Bruno2006,Schnaitter2006,Schnaitter2007,Schnaitter2012}
+\citation{Holze2010}
+\citation{Bruno2005,Dash2011}
+\citation{Athanassoulis2019,Papadomanolakis2004,Serafini2016,Sun2014,Sun2016}
+\citation{Idreos2007,Graefe2010a,Graefe2010c,Schuhknecht2018}
+\citation{Aken2017,Ma2018,Pavlo2017}
+\citation{Idreos2019,Idreos2019a,Idreos2018a,Idreos2018}
+\citation{Mozafari2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Robustness is All You Need}{12}{subsection.8.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Related Work}{12}{section.9}}
+\newlabel{sec:related_work}{{9}{12}{Related Work}{section.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{12}{section.10}}
+\newlabel{sec:conclusion}{{10}{12}{Conclusion}{section.10}{}}
+\bibstyle{ACM-Reference-Format}
+\bibdata{bibliography,library}
+\bibcite{Absalyamov2018}{{1}{2018}{{Absalyamov et~al\unhbox \voidb@x \hbox {.}}}{{Absalyamov, Carey, and Tsotras}}}
+\bibcite{Agrawal2004}{{2}{2004}{{Agrawal et~al\unhbox \voidb@x \hbox {.}}}{{Agrawal, Chaudhuri, Koll{\'{a}}r, Marathe, Narasayya, and Syamala}}}
+\bibcite{Agrawal2000}{{3}{2000}{{Agrawal et~al\unhbox \voidb@x \hbox {.}}}{{Agrawal, Chaudhuri, and Narasayya}}}
+\bibcite{Aken2017}{{4}{2017}{{Aken et~al\unhbox \voidb@x \hbox {.}}}{{Aken, Pavlo, Gordon, and Zhang}}}
+\bibcite{Alkowaileet2020}{{5}{2020}{{Alkowaileet et~al\unhbox \voidb@x \hbox {.}}}{{Alkowaileet, Alsubaiee, and Carey}}}
+\bibcite{github-repo}{{6}{2021}{{{Anonymous Authors}}}{{{Anonymous Authors}}}}
+\bibcite{ApacheCassandra}{{7}{2021}{{Apache}}{{Apache}}}
+\bibcite{Athanassoulis2019}{{8}{2019}{{Athanassoulis et~al\unhbox \voidb@x \hbox {.}}}{{Athanassoulis, B{\o }gh, and Idreos}}}
+\bibcite{Ben-Tal2013-kw}{{9}{2013a}{{Ben-Tal et~al\unhbox \voidb@x \hbox {.}}}{{Ben-Tal, den Hertog, De~Waegenaere, Melenberg, and Rennen}}}
+\bibcite{Ben-Tal2013}{{10}{2013b}{{Ben-Tal et~al\unhbox \voidb@x \hbox {.}}}{{Ben-Tal, den Hertog, Waegenaere, Melenberg, and Rennen}}}
+\bibcite{Ben-Tal1998}{{11}{1998}{{Ben-Tal and Nemirovski}}{{Ben-Tal and Nemirovski}}}
+\bibcite{Bertsimas2010}{{12}{2010}{{Bertsimas et~al\unhbox \voidb@x \hbox {.}}}{{Bertsimas, Nohadani, and Teo}}}
+\bibcite{Bloom1970}{{13}{1970}{{Bloom}}{{Bloom}}}
+\bibcite{Bortnikov2018}{{14}{2018}{{Bortnikov et~al\unhbox \voidb@x \hbox {.}}}{{Bortnikov, Braginsky, Hillel, Keidar, and Sheffi}}}
+\bibcite{Bruno2005}{{15}{2005}{{Bruno and Chaudhuri}}{{Bruno and Chaudhuri}}}
+\bibcite{Bruno2006}{{16}{2006}{{Bruno and Chaudhuri}}{{Bruno and Chaudhuri}}}
+\bibcite{Chang2006}{{17}{2006}{{Chang et~al\unhbox \voidb@x \hbox {.}}}{{Chang, Dean, Ghemawat, Hsieh, Wallach, Burrows, Chandra, Fikes, and Gruber}}}
+\bibcite{Chaudhuri2004a}{{18}{2004}{{Chaudhuri et~al\unhbox \voidb@x \hbox {.}}}{{Chaudhuri, Dageville, and Lohman}}}
+\bibcite{Chaudhuri1997}{{19}{1997}{{Chaudhuri and Narasayya}}{{Chaudhuri and Narasayya}}}
+\bibcite{Chaudhuri1998a}{{20}{1998}{{Chaudhuri and Narasayya}}{{Chaudhuri and Narasayya}}}
+\bibcite{Chaudhuri2005}{{21}{2005}{{Chaudhuri and Weikum}}{{Chaudhuri and Weikum}}}
+\bibcite{Chohan2010}{{22}{2010}{{Chohan et~al\unhbox \voidb@x \hbox {.}}}{{Chohan, Castillo, Spreitzer, Steinder, Tantawi, and Krintz}}}
+\bibcite{Dageville2004}{{23}{2004}{{Dageville et~al\unhbox \voidb@x \hbox {.}}}{{Dageville, Das, Dias, Yagoub, Zait, and Ziauddin}}}
+\bibcite{Dash2011}{{24}{2011}{{Dash et~al\unhbox \voidb@x \hbox {.}}}{{Dash, Polyzotis, and Ailamaki}}}
+\bibcite{Dayan2017}{{25}{2017}{{Dayan et~al\unhbox \voidb@x \hbox {.}}}{{Dayan, Athanassoulis, and Idreos}}}
+\bibcite{Dayan2018a}{{26}{2018}{{Dayan et~al\unhbox \voidb@x \hbox {.}}}{{Dayan, Athanassoulis, and Idreos}}}
+\bibcite{Dayan2018}{{27}{2018}{{Dayan and Idreos}}{{Dayan and Idreos}}}
+\bibcite{Dayan2019}{{28}{2019}{{Dayan and Idreos}}{{Dayan and Idreos}}}
+\bibcite{DeCandia2007}{{29}{2007}{{DeCandia et~al\unhbox \voidb@x \hbox {.}}}{{DeCandia, Hastorun, Jampani, Kakulapati, Lakshman, Pilchin, Sivasubramanian, Vosshall, and Vogels}}}
+\bibcite{Dong2017}{{30}{2017}{{Dong et~al\unhbox \voidb@x \hbox {.}}}{{Dong, Callaghan, Galanis, Borthakur, Savor, and Strum}}}
+\bibcite{FacebookMyRocks}{{31}{[n. d.]}{{Facebook}}{{Facebook}}}
+\bibcite{FacebookRocksDB}{{32}{2021}{{Facebook}}{{Facebook}}}
+\bibcite{Galante2012}{{33}{2012}{{Galante and Bona}}{{Galante and Bona}}}
+\bibcite{GoogleLevelDB}{{34}{2021}{{Google}}{{Google}}}
+\bibcite{Graefe2010a}{{35}{2010a}{{Graefe and Kuno}}{{Graefe and Kuno}}}
+\bibcite{Graefe2010c}{{36}{2010b}{{Graefe and Kuno}}{{Graefe and Kuno}}}
+\bibcite{Hayes2008}{{37}{2008}{{Hayes}}{{Hayes}}}
+\bibcite{HBase2013}{{38}{2013}{{HBase}}{{HBase}}}
+\bibcite{Herbst2013}{{39}{2013}{{Herbst et~al\unhbox \voidb@x \hbox {.}}}{{Herbst, Kounev, and Reussner}}}
+\bibcite{Holze2010}{{40}{2010}{{Holze et~al\unhbox \voidb@x \hbox {.}}}{{Holze, Haschimi, and Ritter}}}
+\bibcite{Huang2019}{{41}{2019}{{Huang et~al\unhbox \voidb@x \hbox {.}}}{{Huang, Cheng, Wang, Wang, He, Zhang, Li, Wang, Cao, and Li}}}
+\bibcite{Idreos2019}{{42}{2019}{{Idreos et~al\unhbox \voidb@x \hbox {.}}}{{Idreos, Dayan, Qin, Akmanalp, Hilgard, Ross, Lennon, Jain, Gupta, Li, and Zhu}}}
+\bibcite{Idreos2007}{{43}{2007}{{Idreos et~al\unhbox \voidb@x \hbox {.}}}{{Idreos, Kersten, and Manegold}}}
+\bibcite{Idreos2019a}{{44}{2019}{{Idreos and Kraska}}{{Idreos and Kraska}}}
+\bibcite{Idreos2018a}{{45}{2018a}{{Idreos et~al\unhbox \voidb@x \hbox {.}}}{{Idreos, Zoumpatianos, Athanassoulis, Dayan, Hentschel, Kester, Guo, Maas, Qin, Wasay, and Sun}}}
+\bibcite{Idreos2018}{{46}{2018b}{{Idreos et~al\unhbox \voidb@x \hbox {.}}}{{Idreos, Zoumpatianos, Hentschel, Kester, and Guo}}}
+\@writefile{toc}{\contentsline {section}{References}{13}{section*.19}}
+\bibcite{Intel2011}{{47}{2011}{{Intel}}{{Intel}}}
+\bibcite{Kim2020}{{48}{2020}{{Kim et~al\unhbox \voidb@x \hbox {.}}}{{Kim, Behm, Blow, Borkar, Bu, Carey, Hubail, Jahangiri, Jia, Li, Luo, Maxon, and Pirzadeh}}}
+\bibcite{Kullback1951}{{49}{1951}{{Kullback and Leibler}}{{Kullback and Leibler}}}
+\bibcite{Luo2020a}{{50}{2020}{{Luo}}{{Luo}}}
+\bibcite{Luo2019a}{{51}{2019}{{Luo and Carey}}{{Luo and Carey}}}
+\bibcite{Luo2020b}{{52}{2020}{{Luo and Carey}}{{Luo and Carey}}}
+\bibcite{Luo2019b}{{53}{2019}{{Luo et~al\unhbox \voidb@x \hbox {.}}}{{Luo, T{\"{o}}z{\"{u}}n, Tian, Barber, Raman, and Sidle}}}
+\bibcite{Luo2020}{{54}{2020}{{Luo et~al\unhbox \voidb@x \hbox {.}}}{{Luo, Chatterjee, Ketsetsidis, Dayan, Qin, and Idreos}}}
+\bibcite{Ma2018}{{55}{2018}{{Ma et~al\unhbox \voidb@x \hbox {.}}}{{Ma, Aken, Hefny, Mezerhane, Pavlo, and Gordon}}}
+\bibcite{Mohan2016}{{56}{2016}{{Mohan}}{{Mohan}}}
+\bibcite{Mozafari2015}{{57}{2015}{{Mozafari et~al\unhbox \voidb@x \hbox {.}}}{{Mozafari, Goh, and Yoon}}}
+\bibcite{ONeil1996}{{58}{1996}{{O'Neil et~al\unhbox \voidb@x \hbox {.}}}{{O'Neil, Cheng, Gawlick, and O'Neil}}}
+\bibcite{Ozcan2017}{{59}{2017}{{{\"{O}}zcan et~al\unhbox \voidb@x \hbox {.}}}{{{\"{O}}zcan, Tian, and T{\"{o}}z{\"{u}}n}}}
+\bibcite{Papadomanolakis2004}{{60}{2004}{{Papadomanolakis and Ailamaki}}{{Papadomanolakis and Ailamaki}}}
+\bibcite{Pardo2018-ou}{{61}{2018}{{Pardo}}{{Pardo}}}
+\bibcite{Pavlo2017}{{62}{2017}{{Pavlo et~al\unhbox \voidb@x \hbox {.}}}{{Pavlo, Angulo, Arulraj, Lin, Lin, Ma, Menon, Mowry, Perron, Quah, Santurkar, Tomasic, Toor, Aken, Wang, Wu, Xian, and Zhang}}}
+\bibcite{Pezzini2014}{{63}{2014}{{Pezzini et~al\unhbox \voidb@x \hbox {.}}}{{Pezzini, Feinberg, Rayner, and Edjlali}}}
+\bibcite{Ren2017}{{64}{2017}{{Ren et~al\unhbox \voidb@x \hbox {.}}}{{Ren, Zheng, Arulraj, and Gibson}}}
+\bibcite{GrandViewResearch2019}{{65}{2019}{{Research}}{{Research}}}
+\bibcite{RocksDB2020a}{{66}{2020}{{RocksDB}}{{RocksDB}}}
+\bibcite{Sarkar2020}{{67}{2020}{{Sarkar et~al\unhbox \voidb@x \hbox {.}}}{{Sarkar, Papon, Staratzis, and Athanassoulis}}}
+\bibcite{Sarkar2021c}{{68}{2021}{{Sarkar et~al\unhbox \voidb@x \hbox {.}}}{{Sarkar, Staratzis, Zhu, and Athanassoulis}}}
+\bibcite{Schnaitter2006}{{69}{2006}{{Schnaitter et~al\unhbox \voidb@x \hbox {.}}}{{Schnaitter, Abiteboul, Milo, and Polyzotis}}}
+\bibcite{Schnaitter2007}{{70}{2007}{{Schnaitter et~al\unhbox \voidb@x \hbox {.}}}{{Schnaitter, Abiteboul, Milo, and Polyzotis}}}
+\bibcite{Schnaitter2012}{{71}{2012}{{Schnaitter and Polyzotis}}{{Schnaitter and Polyzotis}}}
+\bibcite{Schuhknecht2018}{{72}{2018}{{Schuhknecht et~al\unhbox \voidb@x \hbox {.}}}{{Schuhknecht, Dittrich, and Linden}}}
+\bibcite{Serafini2016}{{73}{2016}{{Serafini et~al\unhbox \voidb@x \hbox {.}}}{{Serafini, Taft, Elmore, Pavlo, Aboulnaga, and Stonebraker}}}
+\bibcite{Shasha2002}{{74}{2002}{{Shasha and Bonnet}}{{Shasha and Bonnet}}}
+\bibcite{Sun2014}{{75}{2014}{{Sun et~al\unhbox \voidb@x \hbox {.}}}{{Sun, Franklin, Krishnan, and Xin}}}
+\bibcite{Sun2016}{{76}{2016}{{Sun et~al\unhbox \voidb@x \hbox {.}}}{{Sun, Franklin, Wang, and Wu}}}
+\bibcite{Tarkoma2012}{{77}{2012}{{Tarkoma et~al\unhbox \voidb@x \hbox {.}}}{{Tarkoma, Rothenberg, and Lagerspetz}}}
+\bibcite{Valentin2000}{{78}{2000}{{Valentin et~al\unhbox \voidb@x \hbox {.}}}{{Valentin, Zuliani, Zilio, Lohman, and Skelley}}}
+\bibcite{2020SciPy-NMeth}{{79}{2020}{{Virtanen et~al\unhbox \voidb@x \hbox {.}}}{{Virtanen, Gommers, Oliphant, Haberland, Reddy, and Cournapeau}}}
+\bibcite{enwiki:1025193696}{{80}{2021}{{{Wikipedia contributors}}}{{{Wikipedia contributors}}}}
+\bibcite{WiredTiger}{{81}{2021}{{WiredTiger}}{{WiredTiger}}}
+\bibcite{Wolski2017}{{82}{2017}{{Wolski et~al\unhbox \voidb@x \hbox {.}}}{{Wolski, Brevik, Chard, and Chard}}}
+\bibcite{Yang2020}{{83}{2020}{{Yang et~al\unhbox \voidb@x \hbox {.}}}{{Yang, Wu, Zhang, Cheng, Li, Zou, Wang, Chen, Wang, and Huang}}}
+\bibcite{Zhang2018a}{{84}{2018}{{Zhang et~al\unhbox \voidb@x \hbox {.}}}{{Zhang, Lim, Leis, Andersen, Kaminsky, Keeton, and Pavlo}}}
+\bibcite{Zhang2020a}{{85}{2020a}{{Zhang et~al\unhbox \voidb@x \hbox {.}}}{{Zhang, Lim, Leis, Andersen, Kaminsky, Keeton, and Pavlo}}}
+\bibcite{Zhang2020}{{86}{2020b}{{Zhang et~al\unhbox \voidb@x \hbox {.}}}{{Zhang, Wang, Cheng, Xu, Yu, Huang, Zhang, He, Li, Cao, Huang, and Sun}}}
+\bibcite{Zilio2004}{{87}{2004}{{Zilio et~al\unhbox \voidb@x \hbox {.}}}{{Zilio, Rao, Lightstone, Lohman, Storm, Garcia-Arellano, and Fadden}}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{8.37pt}
+\newlabel{tocindent2}{10.34999pt}
+\newlabel{tocindent3}{0pt}
+\newlabel{TotPages}{{14}{14}{}{page.14}{}}

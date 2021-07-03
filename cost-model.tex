@@ -1,0 +1,223 @@
+%!TEX root = main.tex
+
+% =============================================================================
+\section{The Cost Model of  LSM Trees}
+\label{sec:tuning_lsm_trees}
+% =============================================================================
+
+In this section, we provide the detailed cost model used in {\Endure} to
+    accurately capture the behavior of an LSM tree. 
+Following prior work on LSM trees \cite{Dayan2018a, Luo2020}, we focus on four 
+    types of operations: point queries that return an empty result, point 
+    queries that have a match, range queries, and writes.
+
+\subsection{Model Basics}
+
+When modeling the read cost of LSM trees, a key quantity to accurately capture 
+    is the amount of extra read I/Os that take place. 
+While Bloom filters are used to minimize those, they allow a small fraction of 
+    false positives. 
+In particular, a point lookup probes a run's filter before accessing the run in 
+    secondary storage. 
+If the filter returns negative, the target key does not exist in the run, and 
+    so the lookup skips accessing the run and saves one I/O.
+If a filter returns positive, then the target key may exist in the run, so the 
+    lookup probes the run at a cost of one I/O.
+If the run actually contains the key, the lookup terminates.
+Otherwise, we have a \emph{false positive} and the lookup continues to probe 
+    the next run.
+False positives increase the I/O cost of lookups. 
+The false positive rate ($\epsilon$) of a standard Bloom filter desinged to 
+query $\mathbf{n}$ entries using a bit-array of size $\mathbf{m}$ is shown by 
+    \cite{Tarkoma2012} to be calculated as follows:
+\begin{equation*} 
+\label{eq:bloom}
+    \epsilon = e^{-\frac{\mathbf{m}}{\mathbf{n}} \cdot \ln(2)^2}.
+\end{equation*}
+Note that the above equation assumes the use of an optimal number of hash 
+    functions in the Bloom filter~\cite{enwiki:1025193696}.
+
+Classically, LSM tree based key-value stores use the same number of 
+    bits-per-entry across all Bloom filters. This means that a lookup probes 
+    on average %{\small 
+    $ O\left(e^{-\nicefrac{\mfilt}{N}}\right)$%} 
+    of the runs, 
+    where $\mfilt$ is the overall amount of main memory allocated to the 
+    filters. 
+As $\mfilt$ approaches 0 or infinity, the term 
+    %{\small 
+    $O\left(e^{-\nicefrac{\mfilt}{N}}\right)$%} 
+    approaches 1 or 0 
+    respectively.  
+Here, we build on of the state-of-the-art Bloom filter allocation 
+    strategy proposed in Monkey \cite{Dayan2017,Dayan2018a} that uses different 
+    false positive rates at different levels of the LSM tree to offer  
+    optimal memory allocation; for a size ratio {\sizeratio}, the false positive rate 
+    corresponding to the Bloom filter at the level $i$ is given by
+\begin{equation}
+\label{eq:bloom2}
+    f_i(T) = \frac{T^{\frac{T}{T-1}}}{T^{L(T)+1-i}}\cdot e^{-\frac{\mfilt}{N}\ln(2)^2}.
+\end{equation}
+
+Additionally, false positive rates for all levels satisfy $0 \leq f_i(T) \leq 1$.
+It should be further noted that Monkey optimizes false positive rates at
+    individual levels to minimize the worst case average cost of empty point
+    queries.
+Non-empty point query costs, being significantly lower than those of empty point
+    queries, are not considered during the optimization process.
+
+\Paragraph{LSM Tree Design \& System Parameters}
+In Tables \ref{tab:model-design-params}, \ref{tab:model-system-params},
+    and \ref{tab:workload-params} of Section \ref{sec:notation} we introduced 
+    the key design and system parameters needed to model LSM tree performance. 
+In addition to those parameters, 
+there are two auxiliary and derived parameters we use in the detailed cost model 
+    presented in this section: the potential storage asymmetry in reads and writes (\asym) and 
+    the expected selectivity of range queries (\querySel).
+
+%Table \ref{tab:other-params} summarizes a few 
+%    auxiliary and derived parameters we use in the detailed cost model 
+%    presented in this section.  
+%These include the potential storage asymmetry in reads and writes (\asym) and 
+%    the expected selectivity of range queries (\querySel).
+
+%\begin{table}[h]\centering
+%\renewcommand{\arraystretch}{1.1}
+%\begin{tabular}{cl}
+%    \toprule
+%    Term & Definition \\
+%    \midrule
+%        \asym & Read/write asymmetry in storage access cost  \\
+%        \querySel & Expected selectivity of range queries  \\
+%    \bottomrule
+%\end{tabular}
+%\caption{Auxiliary and derived LSM tree parameters.}
+%    \label{tab:other-params}	
+%\end{table}
+
+\subsection{The Cost Model}
+
+In this section, we model the costs in terms of expected number of I/O 
+    operations required for the fulfillment of the individual queries.
+
+\Paragraph{Expected Empty Point Query Cost ($Z_0$)} 
+A point query that returns an empty result will have to visit all levels (and
+    every sorted run of every level for tiering) where false positives in the 
+    Bloom filters trigger I/O operations. 
+Thus, the expected number of I/O operations per level depend on the Bloom filter 
+    memory allocation at that level.  
+Hence, Equation \eqref{eq:read} expresses $Z_0$ in terms of the false positive 
+    rates at each level:
+\begin{equation} 
+\label{eq:read}
+Z_0(\configuration) = 
+\begin{cases}
+{\color{white} (T-1) \cdot} \sum_{i=1}^{L(T)} f_i(T),	&  \text{if }\policy=\text{leveling} \\[4pt]
+(T-1) \cdot \sum_{i=1}^{L(T)} f_i(T) ,	&  \text{if }\policy=\text{tiering}.  \\
+\end{cases} \\
+\end{equation}
+In the leveling policy, each level has exactly one run.  
+On the other hand, with tiering policy, each level has up to $(T-1)$ runs.
+All runs at the same level in tiering have equal false positives rates 
+    on account of their equal sizes. 
+
+
+\Paragraph{Expected Non-empty Point Query Cost ($Z$)}
+There are two components to the expected non-empty point query
+    cost.
+First, we assume that the probability of a point query finding a non-empty 
+    result in a level is proportional to the size of the level. 
+Thus, the probability of such a query being satisfied on level $i$ by a unit
+    cost I/O operation is simply 
+    $\frac{(T-1)T^{i-1}}{N_f(T)}\frac{\mbuf}{E}$, where $N_f(T)$ denotes the 
+    number of entries in a tree completely full upto $L(T)$ levels. Thus,
+
+\begin{equation}
+N_f(T) = \sum_{i=1}^{L(T)} (T-1)T^{i-1}\frac{\mbuf}{E}. 
+\end{equation}
+
+Second, we assume that all levels preceding level $i$ trigger I/O 
+    operations with probability equivalent to the false positive rates of the 
+    Bloom filters at those levels.
+Similar to the empty point queries, the expected cost of such failed
+    I/Os on preceding levels is simply $\sum_{j=1}^{i-1}f_j(T)$.
+In the case of tiering, we assume that on average, the entry is found in the
+    middle run of the level resulting in an additional
+    $\frac{(T-2)}{2}\cdot f_i(T)$ extra I/O operations. 
+Thus, we can compute the non-empty point query cost as an expectation over the 
+    entry being found on any of the $L(T)$ levels of the tree as follows:
+
+\begin{equation}
+\label{eq:read-non-empty}
+Z_1(\configuration) =
+\begin{cases}
+    \sum_{i=1}^{L(T)} \frac{(T-1)T^{i-1}}{N_f(T)} \frac{\mbuf}{E} \bigg\{1 +
+    \sum_{j=1}^{i-1}f_j(T)\bigg\}, &\text{if } \policy=\text{leveling} \\[8pt]
+    \sum_{i=1}^{L(T)} \frac{(T-1)T^{i-1}}{N_f(T)} \frac{\mbuf}{E} \bigg\{1 +
+        (T-1)\sum_{j=1}^{i-1}&f_j(T)\\
+    {\color{white}\sum_{i=1}^{L(T)} \frac{(T-1)T^{i-1}}{N_f(T)}} +
+\frac{(T-2)}{2}\cdot f_i(T)\bigg\}, &\text{if } \policy=\text{tiering}.  \\
+\end{cases}
+\end{equation}
+
+
+\Paragraph{Range Queries Cost ($Q$)}
+A range query issues $L(T)$ or $L(T) \cdot (\sizeratio-1)$ disk seeks 
+    (one per run) for leveling and tiering respectively.
+Each seek is followed by a sequential scan. The cumulative number of pages
+    scanned over all runs is $\querySel \cdot \frac{N}{B}$, where {\querySel} 
+    is the average proportion of all entries included in range lookups.  
+Hence, the overall range lookup cost $Q$ in terms of pages reads is as follows: 
+
+\begin{equation} 
+\label{eq:range}
+Q(\configuration) = 
+\begin{cases}
+    \querySel \cdot \frac{N}{B} + L(T),  ~~ & \text{if } \policy=\text{leveling}  \\[5pt]
+    \querySel \cdot \frac{N}{B} + L(T) \cdot (\sizeratio-1)  , \qquad     & \text{if } \policy=\text{tiering.}  \\
+\end{cases}  \\
+\end{equation}
+
+\Paragraph{Write Cost ($W$)}
+We model worst-case writing cost assuming that the vast majority 
+    of incoming entries do not overlap. 
+This means that most entries will have to propagate through all levels of the
+    LSM tree.
+Following the state-of-the-art write cost model, we assume that every 
+    written item participated in $\approx \frac{\sizeratio-1}{\sizeratio}$ and
+    $\approx \frac{\sizeratio-1}{2}$ merges with tiering and leveling 
+    respectively.
+We multiply these costs by $L(T)$ since each entry gets merged across all 
+    levels, and we divide by the page size $B$ to get the units in terms of 
+    I/Os.  
+Since LSM trees often employ solid-state storage that has asymmetric cost for 
+    reads and writes, we represent this storage asymmetry as $\asym$. 
+For example, a device for which a write operation is twice as expensive as a 
+    read operation has $\asym=2$.  
+The overall I/O cost is captured by Equation \eqref{eq:write}:
+\begin{equation} 
+\label{eq:write}
+W(\configuration) = 
+\begin{cases}
+    \frac{L(T)}{B} \cdot  \frac{ (\sizeratio-1)}{2  } \cdot (1 + \asym) ,  ~~ & \text{if } \policy=\text{leveling}\\[5pt]
+    \frac{L(T)}{B} \cdot  \frac{ (\sizeratio-1)}{\sizeratio  } \cdot (1 + \asym) ,  \qquad    & \text{if }
+    \policy=\text{tiering.}  \\
+\end{cases}  \\
+\end{equation}
+When $\sizeratio$ is set to 2, tiering and leveling behave identically, so the 
+    two parts of the equation produce the same result. 
+ 
+\Paragraph{Total Expected Cost} 
+The total expected operation cost,
+    $\cost(\workload, \configuration)$, is computed by 
+    weighing the empty point lookup cost $Z_0(\configuration)$ from 
+    Equation~\eqref{eq:read}, the non-empty point lookup cost 
+    $Z(\configuration)$ from Equation~\eqref{eq:read-non-empty}, the range 
+    lookup cost $Q(\configuration)$ from Equation~\eqref{eq:range}, and the
+    write cost $W(\configuration)$ from Equation~\eqref{eq:write} by their 
+    proportion in the workload represented by the terms $z_0$, $z$, $q$ and $w$ 
+    respectively\footnote{Note that $z_0 + z_1 + q + w = 1$}.  
+This is the exact computation of the cost done in Equation~\eqref{eq:thecost}
+    and in the definitions of the {\nominal} and {\robustw} problems
+    (Equations~\eqref{eq:nominal_problem} and~\eqref{eq:robust_workload_problem}
+    respectively).

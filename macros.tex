@@ -1,0 +1,78 @@
+%%%%% NEW MATH DEFINITIONS %%%%%
+
+\usepackage{amsmath,amsfonts,bm}
+
+\newtheorem{problem}{Problem}
+\newtheorem{definition}{Definition}
+% Macros
+\newcommand{\Endure}{{\sc Endure}}
+\newcommand{\cost}{{{\ensuremath{\text{C}}}}}
+\newcommand{\costvec}{{{\ensuremath{\bf{c}}}}}
+
+% Design configruation
+\newcommand{\configuration}{{{\ensuremath{\Phi}}}}
+
+\newcommand{\sizeratio}{{{\ensuremath{T}}}}
+\newcommand{\mbuf}{{{\ensuremath{m_{\mathrm{buf}}}}}}
+\newcommand{\mfilt}{{{\ensuremath{m_{\mathrm{filt}}}}}}
+\newcommand{\mtot}{{{\ensuremath{m}}}}
+\newcommand{\policy}{{{\ensuremath{\pi}}}}
+
+%other knobs and parames
+\newcommand{\asym}{{{\ensuremath{A_\mathrm{rw}}}}}
+\newcommand{\querySel}{{{\ensuremath{S_\mathrm{RQ}}}}}
+
+% Robust rho and distance rho
+\newcommand{\robustrho}{{{\ensuremath{\bf{\rho}}}}}
+\newcommand{\rhohat}{{{\ensuremath{\hat{\bf{w}}}}}}
+
+% Workload queries
+\newcommand{\workload}{{{\ensuremath{\bf{w}}}}}
+\newcommand{\memory}{{{\ensuremath{m}}}}
+\newcommand{\columnvec}{{{\ensuremath{\bf{e}}}}}
+\newcommand{\frequency}{{{\ensuremath{\bf{f}}}}}
+
+% Observed workload, memory
+\newcommand{\obsworkload}{{{\ensuremath{\hat{\bf{w}}}}}}
+\newcommand{\obsmtot}{{{\ensuremath{\hat{m}}}}}
+\newcommand{\mlo}{{{\ensuremath{m_\mathrm{lo}}}}}
+\newcommand{\mhi}{{{\ensuremath{m_\mathrm{hi}}}}}
+
+\newcommand{\nonemptylookup}{{{\ensuremath{z_1}}}}
+\newcommand{\emptylookup}{{{\ensuremath{z_0}}}}
+\newcommand{\range}{{{\ensuremath{q}}}}
+\newcommand{\update}{{{\ensuremath{w}}}}
+\newcommand{\benchmark}{{{\ensuremath{\mathcal{B}}}}}
+
+% Operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Tr}{Tr}
+\let\ab\allowbreak
+
+%problems
+\newcommand{\nominal}{{\sc Nominal LSMTuning}}
+\newcommand{\robustw}{{\sc Robust  Tuning}}
+\newcommand{\robustm}{{\sc Robust Memory Tuning}}
+
+
+%formating
+\newcommand{\spara}[1]{\smallskip\noindent{\bf{#1}}}
+\newcommand{\mpara}[1]{\medskip\noindent{\bf{#1}}}
+\newcommand{\bpara}[1]{\bigskip\noindent{\bf{#1}}}
+\newcommand{\etal}{\emph{et al.}}
+
+\newcommand\Paragraph[1]{\vspace{0.02in}  \noindent \textbf{#1.}}
+\newcommand\Paragraphit[1]{\vspace{0.02in}  \noindent \textit{\underline{#1:}}}
+
+\newcommand{\squishlist}{\begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+\newcommand{\squishend}{
+  \end{list}  }
